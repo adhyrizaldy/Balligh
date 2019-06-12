@@ -9,11 +9,19 @@
     <dimen name="lebar_logo">160dp</dimen>
 
     <dimen name="text_super_large">45sp</dimen>
+    <dimen name="text_standard_big">18sp</dimen>
+    <dimen name="text_standard">15sp</dimen>
 
     <dimen name="margin_super_large">100dp</dimen>
+    <dimen name="margin_large_standard">60dp</dimen>
     <dimen name="margin_large">50dp</dimen>
+    <dimen name="margin_big_standard">35dp</dimen>
     <dimen name="margin_big">20dp</dimen>
     <dimen name="margin_standard_big">15dp</dimen>
     <dimen name="margin_standard">10dp</dimen>
     <dimen name="margin_small">5dp</dimen>
+
+    <dimen name="width_max">320dp</dimen>
+
+    <dimen name="height_standard">55dp</dimen>
 </resources>

@@ -5,6 +5,10 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="putihAsli">#ffffff</color>
+    <color name="putihBiru">#4E62E6</color>
+    <color name="putihBiruGelap">#2035C3</color>
 
     <color name="hitamAsli">#000000</color>
+
+    <color name="yellowAsli">#FDEA03</color>
 </resources>

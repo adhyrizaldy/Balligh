@@ -11,8 +11,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         >
         <activity
-            android:name=".Activity.Welcome"
-            android:label="@string/app_name">
+            android:name=".Activity.Landing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
