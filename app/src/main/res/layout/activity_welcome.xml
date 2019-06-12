@@ -5,6 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.exomatik.balligh.balligh.Activity.Welcome"
+    android:background="@drawable/background_blue_full"
     >
+    <ImageView
+        android:layout_width="@dimen/lebar_logo"
+        android:layout_height="@dimen/lebar_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_super_large"
+        android:src="@drawable/logo_balligh"
+        android:id="@+id/img_logo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balligh"
+        android:textColor="@color/putihAsli"
+        android:textSize="@dimen/text_super_large"
+        android:fontFamily="@font/eras_itc"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/img_logo"
+        />
 
+    
 </RelativeLayout>
