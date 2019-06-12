@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "57612414568",
+    "firebase_url": "https://balligh-8e57c.firebaseio.com",
+    "project_id": "balligh-8e57c",
+    "storage_bucket": "balligh-8e57c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57612414568:android:287b616cedb95383",
+        "android_client_info": {
+          "package_name": "com.exomatik.balligh.balligh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57612414568-pufubno5f88u22irqek2hurlb0ophhri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exomatik.balligh.balligh",
+            "certificate_hash": "6d09a41daf8e3ea3540b260ae1f4878b04cd8166"
+          }
+        },
+        {
+          "client_id": "57612414568-r3c0edl7oru5blurqk8dn187c35ejcii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHaMTUrbd7OIvxRVD3YpMWTMisvLrktrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57612414568-r3c0edl7oru5blurqk8dn187c35ejcii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

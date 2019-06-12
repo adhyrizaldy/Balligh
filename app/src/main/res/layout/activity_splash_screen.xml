@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.exomatik.balligh.balligh.Activity.SplashScreen"
+    android:background="@drawable/background_blue_full"
+    >
+    <ImageView
+        android:layout_width="@dimen/lebar_logo"
+        android:layout_height="@dimen/lebar_logo"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_balligh"
+        android:layout_marginTop="@dimen/margin_super_large"
+        android:id="@+id/img_logo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_maintenance"
+        android:text="Mohon Maaf, aplikasi sedang maintenance"
+        android:textColor="@color/putihAsli"
+        android:textSize="@dimen/text_standard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_big"
+        android:layout_below="@+id/img_logo"
+        android:visibility="gone"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balligh | All Right Reserved 2019"
+        android:textColor="@color/putihAsli"
+        android:textSize="@dimen/text_standard_big"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.exomatik.balligh.balligh.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.exomatik.balligh.balligh.R;
 
 public class Landing extends AppCompatActivity {
     private Button btnSignIn, btnSignUp;
+    private int buttonState = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class Landing extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 signIn();
             }
         });
@@ -35,10 +38,12 @@ public class Landing extends AppCompatActivity {
     }
 
     private void signIn(){
-        Toast.makeText(this, "SignIn", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Landing.this, SignIn.class));
+        finish();
     }
 
     private void signUp(){
-        Toast.makeText(this, "SignUp", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Landing.this, SignUp.class));
+        finish();
     }
 }

@@ -47,7 +47,7 @@
         android:textColor="@color/putihBiruGelap"
         android:textSize="@dimen/text_standard"
         android:textStyle="bold"
-        android:background="@drawable/border_btn_white"
+        android:background="@drawable/border_round_full_white"
         android:id="@+id/btn_sign_in"
         android:textAllCaps="false"
         android:fontFamily="@font/roboto_regular"
@@ -65,7 +65,7 @@
         android:textAllCaps="false"
         android:id="@+id/btn_sign_up"
         android:layout_below="@+id/btn_sign_in"
-        android:background="@drawable/border_btn_yellow"
+        android:background="@drawable/border_round_full_yellow"
         android:layout_marginTop="@dimen/margin_big"
         />
 </RelativeLayout>
