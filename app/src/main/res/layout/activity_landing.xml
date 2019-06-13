@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.exomatik.balligh.balligh.Activity.Landing"
+    tools:context="com.exomatik.balligh.balligh.Activity.ActLanding"
     android:background="@drawable/background_blue_full"
     >
     <ImageView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/text_logo"
-        android:text="@string/landing_welcome"
+        android:text="@string/text_landing_welcome"
         android:textColor="@color/putihBiru"
         android:textSize="@dimen/text_standard_big"
         android:fontFamily="@font/roboto_regular"

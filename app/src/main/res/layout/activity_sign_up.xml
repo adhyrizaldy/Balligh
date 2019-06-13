@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.exomatik.balligh.balligh.Activity.SignUp">
+    tools:context="com.exomatik.balligh.balligh.Activity.ActSignUp"
+    android:background="@drawable/background_blue_full"
+    android:padding="@dimen/margin_big"
+    >
+    <ImageView
+        android:layout_width="@dimen/margin_super_large"
+        android:layout_height="@dimen/margin_super_large"
+        android:src="@drawable/logo_balligh"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/img_logo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_sign_up"
+        android:layout_below="@+id/img_logo"
+        android:id="@+id/text_sign_up"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/text_standard_big"
+        android:textColor="@color/putihBiru"
+        android:layout_marginTop="@dimen/margin_small"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large_standard"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/border_transparent"
+        android:hint="@string/et_nama_lengkap"
+        android:textColorHint="@color/putihAsli"
+        android:textSize="@dimen/text_standard_et"
+        android:paddingLeft="@dimen/margin_big"
+        android:paddingRight="@dimen/margin_big"
+        android:id="@+id/et_nama"
+        android:layout_below="@+id/text_sign_up"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large_standard"
+        android:layout_marginTop="@dimen/margin_standard_big"
+        android:background="@drawable/border_transparent"
+        android:hint="@string/et_nomor_hp"
+        android:textColorHint="@color/putihAsli"
+        android:textSize="@dimen/text_standard_et"
+        android:paddingLeft="@dimen/margin_big"
+        android:paddingRight="@dimen/margin_big"
+        android:id="@+id/et_nomor"
+        android:layout_below="@+id/et_nama"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large_standard"
+        android:layout_marginTop="@dimen/margin_standard_big"
+        android:background="@drawable/border_transparent"
+        android:hint="@string/et_password"
+        android:textColorHint="@color/putihAsli"
+        android:textSize="@dimen/text_standard_et"
+        android:paddingLeft="@dimen/margin_big"
+        android:paddingRight="@dimen/margin_big"
+        android:id="@+id/et_password"
+        android:layout_below="@+id/et_nomor"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large_standard"
+        android:layout_marginTop="@dimen/margin_standard_big"
+        android:background="@drawable/border_transparent"
+        android:hint="@string/et_konfirm_password"
+        android:textColorHint="@color/putihAsli"
+        android:textSize="@dimen/text_standard_et"
+        android:paddingLeft="@dimen/margin_big"
+        android:paddingRight="@dimen/margin_big"
+        android:id="@+id/et_confirm_pass"
+        android:layout_below="@+id/et_password"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_jenis_akun"
+        android:textColor="@color/putihAsli"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_confirm_pass"
+        android:id="@+id/text_jenis_akun"
+        
+        />
+</RelativeLayout>

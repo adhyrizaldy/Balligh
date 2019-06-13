@@ -10,6 +10,7 @@
 
     <dimen name="text_super_large">45sp</dimen>
     <dimen name="text_standard_big">18sp</dimen>
+    <dimen name="text_standard_et">16sp</dimen>
     <dimen name="text_standard">15sp</dimen>
 
     <dimen name="margin_super_large">100dp</dimen>

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Activity.SplashScreen">
+        <activity android:name=".Activity.ActSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Activity.SignIn" />
-        <activity android:name=".Activity.SignUp" />
-        <activity android:name=".Activity.Landing"/>
+        <activity android:name=".Activity.ActSignIn" />
+        <activity android:name=".Activity.ActSignUp" />
+        <activity android:name=".Activity.ActLanding"/>
     </application>
 
 </manifest>
