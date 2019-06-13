@@ -21,6 +21,7 @@
     <dimen name="margin_standard_big">15dp</dimen>
     <dimen name="margin_standard">10dp</dimen>
     <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_mines_very_small">-2dp</dimen>
 
     <dimen name="width_max">320dp</dimen>
 

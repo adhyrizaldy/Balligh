@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +21,7 @@ import java.util.Iterator;
 public class ActSplashScreen extends AppCompatActivity {
     private TextView textService;
     private boolean back = false;
+    private UserPreference userPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class ActSplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         textService = (TextView) findViewById(R.id.text_maintenance);
+
+        userPreference = new UserPreference(this);
 
         getDataMaintenance();
     }
@@ -81,6 +85,11 @@ public class ActSplashScreen extends AppCompatActivity {
                 if (FirebaseAuth.getInstance().getCurrentUser() != null){
                     Toast.makeText(ActSplashScreen.this, "Sudah login", Toast.LENGTH_SHORT).show();
 //                    saveData(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                    hapusData();
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
+                    finish();
+                    Toast.makeText(ActSplashScreen.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Intent homeIntent = new Intent(ActSplashScreen.this, ActLanding.class);
@@ -89,5 +98,14 @@ public class ActSplashScreen extends AppCompatActivity {
                 }
             }
         }, 2000L);
+    }
+
+    private void hapusData(){
+        userPreference.setKEY_NAME(null);
+        userPreference.setKEY_EMAIL(null);
+        userPreference.setKEY_PHONE(null);
+        userPreference.setKEY_FOTO(null);
+        userPreference.setKEY_UID(null);
+        userPreference.setKEY_JENIS(null);
     }
 }

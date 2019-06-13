@@ -1,6 +1,10 @@
 package com.exomatik.balligh.balligh.Activity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,15 +15,37 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.exomatik.balligh.balligh.Featured.UserPreference;
+import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Iterator;
 
 public class ActSignUp extends AppCompatActivity {
-    private int jenisAkun = 3;
-    private ImageView bgJenis1, bgJenis2, bgJenis3;
-    private RelativeLayout btnJenis1, btnJenis2, btnJenis3;
+    private String jenisAkun = "Muballigh";
+    private RelativeLayout bgJenis1, bgJenis2, bgJenis3;
+    private RelativeLayout btnJenis1, btnJenis2, btnJenis3, btnJenis4;
     private TextView btnSignIn;
     private Button btnSignUp;
     private EditText etNama, etEmail, etPhone, etPass, etConfirmPass;
+    private ProgressDialog progressDialog;
+    private View v;
+    private String data1;
+    private String data2;
+    private String data3;
+    private UserPreference userPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +55,10 @@ public class ActSignUp extends AppCompatActivity {
         btnJenis1 = (RelativeLayout) findViewById(R.id.rl_ld);
         btnJenis2 = (RelativeLayout) findViewById(R.id.rl_pm);
         btnJenis3 = (RelativeLayout) findViewById(R.id.rl_mb);
-        bgJenis1 = (ImageView) findViewById(R.id.bg_jenis_ld);
-        bgJenis2 = (ImageView) findViewById(R.id.bg_jenis_pm);
-        bgJenis3 = (ImageView) findViewById(R.id.bg_jenis_mb);
+        btnJenis4 = (RelativeLayout) findViewById(R.id.rl_ms);
+        bgJenis1 = (RelativeLayout) findViewById(R.id.rl_ld);
+        bgJenis2 = (RelativeLayout) findViewById(R.id.rl_pm);
+        bgJenis3 = (RelativeLayout) findViewById(R.id.rl_mb);
         btnSignIn = (TextView) findViewById(R.id.text_sign_in);
         btnSignUp = (Button) findViewById(R.id.btn_sign_up);
         etNama = (EditText) findViewById(R.id.et_nama);
@@ -39,27 +66,41 @@ public class ActSignUp extends AppCompatActivity {
         etPhone  = (EditText) findViewById(R.id.et_nomor);
         etPass = (EditText) findViewById(R.id.et_password);
         etConfirmPass = (EditText) findViewById(R.id.et_confirm_pass);
+        v = (View) findViewById(android.R.id.content);
 
-        jenisAkun = gantiBg(3);
+        userPreference = new UserPreference(this);
+        data1 = getResources().getString(R.string.jenis_akun_1);
+        data2 = getResources().getString(R.string.jenis_akun_2);
+        data3 = getResources().getString(R.string.jenis_akun_3);
+        jenisAkun = gantiBg(data3);
 
         btnJenis1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gantiBg(1);
+                jenisAkun = gantiBg(data1);
             }
         });
 
         btnJenis2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gantiBg(2);
+                jenisAkun = gantiBg(data2);
             }
         });
 
         btnJenis3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gantiBg(3);
+                jenisAkun = gantiBg(data3);
+            }
+        });
+
+        btnJenis4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar
+                        .make(v, "Mohon maaf, fitur ini belum tersedia", Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         });
 
@@ -79,6 +120,33 @@ public class ActSignUp extends AppCompatActivity {
         });
     }
 
+    private String gantiBg(String jenis){
+        switch (jenis){
+            case "Lembaga Dakwah" :
+                bgJenis1.setBackgroundResource(R.drawable.background_blue_rounded);
+                bgJenis2.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
+                break;
+            case "Pengurus Masjid" :
+                bgJenis1.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis2.setBackgroundResource(R.drawable.background_blue_rounded);
+                bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
+                break;
+            case "Muballigh":
+                bgJenis1.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis2.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis3.setBackgroundResource(R.drawable.background_blue_rounded);
+                break;
+        }
+        return jenis;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(ActSignUp.this, ActLanding.class));
+        finish();
+    }
+
     private void cekEditText() {
         String nama = etNama.getText().toString();
         String email = etEmail.getText().toString();
@@ -86,7 +154,8 @@ public class ActSignUp extends AppCompatActivity {
         String pass = etPass.getText().toString();
         String confirmPass = etConfirmPass.getText().toString();
 
-        if (nama.isEmpty() || email.isEmpty() || phone.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()){
+        if (nama.isEmpty() || email.isEmpty() || phone.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()
+                || !pass.equals(confirmPass) || phone.length() < 9){
             if (nama.isEmpty()){
                 etNama.setError(getResources().getString(R.string.text_data_kosong));
             }
@@ -102,39 +171,144 @@ public class ActSignUp extends AppCompatActivity {
             if (confirmPass.isEmpty()){
                 etConfirmPass.setError(getResources().getString(R.string.text_data_kosong));
             }
+            if (!pass.equals(confirmPass)){
+                etConfirmPass.setError(getResources().getString(R.string.text_pass_not_same));
+            }
+            if (phone.length() < 9){
+                etPhone.setError(getResources().getString(R.string.text_nomor_tidak_cukup));
+            }
         }
         else {
-            Toast.makeText(this, "TIdak kosong", Toast.LENGTH_SHORT).show();
+            progressDialog = new ProgressDialog(ActSignUp.this);
+            progressDialog.setMessage("Mohon Tunggu...");
+            progressDialog.setTitle("Proses");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            cekEmaildanPassword(nama, email, phone, pass, jenisAkun);
         }
     }
 
-    private int gantiBg(int jenis){
-        switch (jenis){
-            case 1 :
-                bgJenis1.setImageResource(R.drawable.background_blue_rounded);
-                bgJenis2.setImageResource(R.drawable.background_white_rounded);
-                bgJenis3.setImageResource(R.drawable.background_white_rounded);
-                jenis = 1;
-                break;
-            case 2 :
-                bgJenis1.setImageResource(R.drawable.background_white_rounded);
-                bgJenis2.setImageResource(R.drawable.background_blue_rounded);
-                bgJenis3.setImageResource(R.drawable.background_white_rounded);
-                jenis = 2;
-                break;
-            case 3 :
-                bgJenis1.setImageResource(R.drawable.background_white_rounded);
-                bgJenis2.setImageResource(R.drawable.background_white_rounded);
-                bgJenis3.setImageResource(R.drawable.background_blue_rounded);
-                jenis = 3;
-                break;
-        }
-        return jenis;
+    private void cekEmaildanPassword(final String nama, final String email, final String phone, final String pass, final String jenisAkun) {
+        Query query = FirebaseDatabase.getInstance()
+                .getReference("users")
+                .orderByChild("noHp")
+                .equalTo(phone);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    progressDialog.dismiss();
+                    etPhone.setError("Nomor telepon sudah terdaftar");
+                    Snackbar snackbar = Snackbar
+                            .make(v, "Mohon maaf, nomor telepon sudah terdaftar", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else {
+                    prosesDaftar(nama, email, phone, pass, jenisAkun);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                progressDialog.dismiss();
+                Toast.makeText(ActSignUp.this, "Error, " + databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(ActSignUp.this, ActLanding.class));
-        finish();
+    private void prosesDaftar(final String nama, final String email, final String phone, String pass, final String jenis) {
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    addUsertoFirebase(task.getResult().getUser(), nama, email, phone, jenis);
+                } else {
+                    progressDialog.dismiss();
+                    Snackbar snackbar = Snackbar
+                            .make(v, "Mohon maaf, gagal membuat user", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
+                if(e.getMessage().toString().contains("email address is already in use")){
+                    etEmail.setError("Email sudah terdaftar");
+                    Snackbar snackbar = Snackbar
+                            .make(v, "Mohon maaf, email sudah terdaftar. Silahkan coba email yang lain", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else {
+                    Snackbar snackbar = Snackbar
+                            .make(v, "Mohon maaf, " + e.getMessage().toString(), Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        });
+    }
+
+    private void addUsertoFirebase(FirebaseUser firebaseUser, final String nama,
+                                   final String email, final String phone, final String jenis) {
+        final ModelUser userData = new ModelUser(nama, email, phone, firebaseUser.getUid(), null, jenis);
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+
+        database.child("users")
+                .child(phone)
+                .setValue(userData)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            progressDialog.dismiss();
+                            saveData(email);
+                        } else {
+                            progressDialog.dismiss();
+                            Snackbar snackbar = Snackbar
+                                    .make(v, "Mohon maaf, " + task.getException().getMessage().toString(), Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
+                Toast.makeText(ActSignUp.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void saveData(final String email){
+        FirebaseDatabase.getInstance().getReference("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Iterator localIterator = dataSnapshot.getChildren().iterator();
+                    while (localIterator.hasNext()) {
+                        ModelUser localDataUser = (ModelUser) ((DataSnapshot) localIterator.next()).getValue(ModelUser.class);
+                        if (localDataUser.getEmail().toString().equalsIgnoreCase(email)){
+                            userPreference.setKEY_NAME(localDataUser.getNamaLengkap());
+                            userPreference.setKEY_EMAIL(localDataUser.getEmail());
+                            userPreference.setKEY_PHONE(localDataUser.getNoHp());
+                            userPreference.setKEY_UID(localDataUser.getUid());
+                            userPreference.setKEY_FOTO(localDataUser.getFoto());
+                            userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
+
+                            Toast.makeText(ActSignUp.this, "Berhasil Registrasi", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
+                            finish();
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(ActSignUp.this, "Gagal Mengambil Data Terbaru", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(ActSignUp.this, "Gagal Mengambil Data Terbaru", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

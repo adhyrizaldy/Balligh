@@ -20,10 +20,14 @@
     <string name="text_sudah_punya_akun">Sudah punya akun?</string>
     <string name="text_sign_in">Sign in!</string>
     <string name="text_data_kosong">Data tidak boleh kosong!</string>
+    <string name="text_pass_not_same">Password tidak sesuai!</string>
+    <string name="text_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
 
     <string name="jenis_akun_1">Lembaga Dakwah</string>
     <string name="jenis_akun_2">Pengurus Masjid</string>
     <string name="jenis_akun_3">Muballigh</string>
     <string name="jenis_akun_4">Masyarakat</string>
 
+    <string name="digit_nama">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_ .,</string>
+    <string name="digit_email">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_@.</string>
 </resources>
