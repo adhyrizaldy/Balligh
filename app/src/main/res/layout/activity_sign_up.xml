@@ -1,92 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.exomatik.balligh.balligh.Activity.ActSignUp"
     android:background="@drawable/background_blue_full"
     android:padding="@dimen/margin_big"
-    >
-    <ImageView
-        android:layout_width="@dimen/margin_super_large"
-        android:layout_height="@dimen/margin_super_large"
-        android:src="@drawable/logo_balligh"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/img_logo"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_sign_up"
-        android:layout_below="@+id/img_logo"
-        android:id="@+id/text_sign_up"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="@dimen/text_standard_big"
-        android:textColor="@color/putihBiru"
-        android:layout_marginTop="@dimen/margin_small"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_large_standard"
-        android:layout_marginTop="@dimen/margin_small"
-        android:background="@drawable/border_transparent"
-        android:hint="@string/et_nama_lengkap"
-        android:textColorHint="@color/putihAsli"
-        android:textSize="@dimen/text_standard_et"
-        android:paddingLeft="@dimen/margin_big"
-        android:paddingRight="@dimen/margin_big"
-        android:id="@+id/et_nama"
-        android:layout_below="@+id/text_sign_up"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_large_standard"
-        android:layout_marginTop="@dimen/margin_standard_big"
-        android:background="@drawable/border_transparent"
-        android:hint="@string/et_nomor_hp"
-        android:textColorHint="@color/putihAsli"
-        android:textSize="@dimen/text_standard_et"
-        android:paddingLeft="@dimen/margin_big"
-        android:paddingRight="@dimen/margin_big"
-        android:id="@+id/et_nomor"
-        android:layout_below="@+id/et_nama"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_large_standard"
-        android:layout_marginTop="@dimen/margin_standard_big"
-        android:background="@drawable/border_transparent"
-        android:hint="@string/et_password"
-        android:textColorHint="@color/putihAsli"
-        android:textSize="@dimen/text_standard_et"
-        android:paddingLeft="@dimen/margin_big"
-        android:paddingRight="@dimen/margin_big"
-        android:id="@+id/et_password"
-        android:layout_below="@+id/et_nomor"
-        />
+    tools:context="com.exomatik.balligh.balligh.Activity.ActSignUp">
 
-    <EditText
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_large_standard"
-        android:layout_marginTop="@dimen/margin_standard_big"
-        android:background="@drawable/border_transparent"
-        android:hint="@string/et_konfirm_password"
-        android:textColorHint="@color/putihAsli"
-        android:textSize="@dimen/text_standard_et"
-        android:paddingLeft="@dimen/margin_big"
-        android:paddingRight="@dimen/margin_big"
-        android:id="@+id/et_confirm_pass"
-        android:layout_below="@+id/et_password"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_jenis_akun"
-        android:textColor="@color/putihAsli"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/et_confirm_pass"
-        android:id="@+id/text_jenis_akun"
-        
-        />
-</RelativeLayout>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="@dimen/margin_super_large"
+            android:layout_height="@dimen/margin_super_large"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_balligh" />
+
+        <TextView
+            android:id="@+id/text_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_logo"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/btn_sign_up"
+            android:textColor="@color/putihBiru"
+            android:textSize="@dimen/text_standard_big" />
+
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_large_standard"
+            android:layout_below="@+id/text_sign_up"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@drawable/border_transparent"
+            android:hint="@string/et_nama_lengkap"
+            android:paddingLeft="@dimen/margin_big"
+            android:paddingRight="@dimen/margin_big"
+            android:textColorHint="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_large_standard"
+            android:layout_below="@+id/et_nama"
+            android:layout_marginTop="@dimen/margin_standard_big"
+            android:background="@drawable/border_transparent"
+            android:hint="@string/et_email"
+            android:paddingLeft="@dimen/margin_big"
+            android:paddingRight="@dimen/margin_big"
+            android:textColorHint="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <EditText
+            android:id="@+id/et_nomor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_large_standard"
+            android:layout_below="@+id/et_email"
+            android:layout_marginTop="@dimen/margin_standard_big"
+            android:background="@drawable/border_transparent"
+            android:hint="@string/et_nomor_hp"
+            android:paddingLeft="@dimen/margin_big"
+            android:paddingRight="@dimen/margin_big"
+            android:textColorHint="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_large_standard"
+            android:layout_below="@+id/et_nomor"
+            android:layout_marginTop="@dimen/margin_standard_big"
+            android:background="@drawable/border_transparent"
+            android:hint="@string/et_password"
+            android:paddingLeft="@dimen/margin_big"
+            android:paddingRight="@dimen/margin_big"
+            android:textColorHint="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <EditText
+            android:id="@+id/et_confirm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_large_standard"
+            android:layout_below="@+id/et_password"
+            android:layout_marginTop="@dimen/margin_standard_big"
+            android:background="@drawable/border_transparent"
+            android:hint="@string/et_konfirm_password"
+            android:paddingLeft="@dimen/margin_big"
+            android:paddingRight="@dimen/margin_big"
+            android:textColorHint="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <TextView
+            android:id="@+id/text_jenis_akun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_confirm_pass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/text_jenis_akun"
+            android:textColor="@color/putihAsli" />
+
+        <RelativeLayout
+            android:id="@+id/rl_jenis_akun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_jenis_akun">
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_ld"
+                android:layout_marginTop="@dimen/margin_small"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/background_white_rounded"
+                    android:id="@+id/bg_jenis_ld"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_blue"
+                    android:id="@+id/img_icon_ld"
+
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lembaga_dakwah"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_logo_ld"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jenis_akun_1"
+                    android:layout_toRightOf="@+id/img_icon_ld"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_standard_et"
+                    android:textColor="@color/putihAsli"
+                    android:layout_margin="@dimen/margin_small"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_pm"
+                android:layout_below="@+id/rl_ld"
+                android:layout_marginTop="@dimen/margin_small"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/background_white_rounded"
+                    android:id="@+id/bg_jenis_pm"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_blue"
+                    android:id="@+id/img_icon_pm"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pengurus_masjid"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_logo_pm"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jenis_akun_2"
+                    android:layout_toRightOf="@+id/img_icon_pm"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_standard_et"
+                    android:textColor="@color/putihAsli"
+                    android:layout_margin="@dimen/margin_small"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_mb"
+                android:layout_toRightOf="@+id/rl_ld"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_standard"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/background_blue_rounded"
+                    android:id="@+id/bg_jenis_mb"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_blue"
+                    android:id="@+id/img_icon_mb"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/muballigh"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_logo_mb"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jenis_akun_3"
+                    android:layout_toRightOf="@+id/img_icon_mb"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_standard_et"
+                    android:textColor="@color/putihAsli"
+                    android:layout_margin="@dimen/margin_small"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="@dimen/width_max"
+            android:layout_height="@dimen/height_standard"
+            android:layout_below="@+id/rl_jenis_akun"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_big"
+            android:background="@drawable/border_round_full_yellow"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/btn_sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/putihBiruGelap"
+            android:textSize="@dimen/text_standard"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_sign_up"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_small"
+                android:text="@string/text_sudah_punya_akun"
+                android:textColor="@color/putihAsli"
+                android:textSize="@dimen/text_standard_et" />
+
+            <TextView
+                android:id="@+id/text_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_sign_in"
+                android:textColor="@color/blueAqua"
+                android:textSize="@dimen/text_standard_et"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

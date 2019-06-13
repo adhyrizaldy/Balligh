@@ -10,10 +10,20 @@
     <string name="btn_sign_in">Sign In</string>
 
     <string name="et_nama_lengkap">Nama Lengkap</string>
+    <string name="et_email">Email</string>
     <string name="et_nomor_hp">Nomor HP</string>
     <string name="et_password">Password</string>
     <string name="et_konfirm_password">Konfirmasi Password</string>
 
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
+    <string name="text_sudah_punya_akun">Sudah punya akun?</string>
+    <string name="text_sign_in">Sign in!</string>
+    <string name="text_data_kosong">Data tidak boleh kosong!</string>
+
+    <string name="jenis_akun_1">Lembaga Dakwah</string>
+    <string name="jenis_akun_2">Pengurus Masjid</string>
+    <string name="jenis_akun_3">Muballigh</string>
+    <string name="jenis_akun_4">Masyarakat</string>
+
 </resources>

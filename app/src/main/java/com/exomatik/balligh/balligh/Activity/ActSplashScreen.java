@@ -44,6 +44,7 @@ public class ActSplashScreen extends AppCompatActivity {
 
     ValueEventListener valueEventListener = new ValueEventListener() {
         public void onCancelled(DatabaseError paramAnonymousDatabaseError) {
+            back = true;
             Toast.makeText(ActSplashScreen.this, paramAnonymousDatabaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
         }
 
