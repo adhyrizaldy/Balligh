@@ -19,14 +19,28 @@
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
     <string name="text_sudah_punya_akun">Sudah punya akun?</string>
     <string name="text_sign_in">Sign in!</string>
-    <string name="text_data_kosong">Data tidak boleh kosong!</string>
-    <string name="text_pass_not_same">Password tidak sesuai!</string>
-    <string name="text_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
+    <string name="text_forget_pass">Lupa Password?</string>
+
+    <string name="error_data_kosong">Data tidak boleh kosong!</string>
+    <string name="error_pass_not_same">Password tidak sesuai!</string>
+    <string name="error_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
+    <string name="error_nomor_terdaftar">Nomor telepon sudah terdaftar</string>
+    <string name="error_email_terdaftar">Email sudah terdaftar</string>
+    <string name="error">Error</string>
+    <string name="error_fitur_not_ready">Mohon maaf, fitur ini belum tersedia</string>
+    <string name="error_unknown">Mohon maaf, terjadi error yang tidak diketahui</string>
+    <string name="error_update">Gagal Mengambil Data Terbaru</string>
+
+    <string name="toast_success_register">Berhasil Registrasi</string>
+    <string name="toast_success_login">Berhasil Login</string>
 
     <string name="jenis_akun_1">Lembaga Dakwah</string>
     <string name="jenis_akun_2">Pengurus Masjid</string>
     <string name="jenis_akun_3">Muballigh</string>
     <string name="jenis_akun_4">Masyarakat</string>
+
+    <string name="progress_title1">Mohon Tunggu...</string>
+    <string name="progress_text1">Proses</string>
 
     <string name="digit_nama">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_ .,</string>
     <string name="digit_email">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_@.</string>

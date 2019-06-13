@@ -1,7 +1,6 @@
 package com.exomatik.balligh.balligh.Activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,7 +97,7 @@ public class ActSignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Snackbar snackbar = Snackbar
-                        .make(v, "Mohon maaf, fitur ini belum tersedia", Snackbar.LENGTH_LONG);
+                        .make(v, getResources().getString(R.string.error_fitur_not_ready), Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
         });
@@ -157,31 +155,31 @@ public class ActSignUp extends AppCompatActivity {
         if (nama.isEmpty() || email.isEmpty() || phone.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()
                 || !pass.equals(confirmPass) || phone.length() < 9){
             if (nama.isEmpty()){
-                etNama.setError(getResources().getString(R.string.text_data_kosong));
+                etNama.setError(getResources().getString(R.string.error_data_kosong));
             }
             if (email.isEmpty()){
-                etEmail.setError(getResources().getString(R.string.text_data_kosong));
+                etEmail.setError(getResources().getString(R.string.error_data_kosong));
             }
             if (phone.isEmpty()){
-                etPhone.setError(getResources().getString(R.string.text_data_kosong));
+                etPhone.setError(getResources().getString(R.string.error_data_kosong));
             }
             if (pass.isEmpty()){
-                etPass.setError(getResources().getString(R.string.text_data_kosong));
+                etPass.setError(getResources().getString(R.string.error_data_kosong));
             }
             if (confirmPass.isEmpty()){
-                etConfirmPass.setError(getResources().getString(R.string.text_data_kosong));
+                etConfirmPass.setError(getResources().getString(R.string.error_data_kosong));
             }
             if (!pass.equals(confirmPass)){
-                etConfirmPass.setError(getResources().getString(R.string.text_pass_not_same));
+                etConfirmPass.setError(getResources().getString(R.string.error_pass_not_same));
             }
             if (phone.length() < 9){
-                etPhone.setError(getResources().getString(R.string.text_nomor_tidak_cukup));
+                etPhone.setError(getResources().getString(R.string.error_nomor_tidak_cukup));
             }
         }
         else {
             progressDialog = new ProgressDialog(ActSignUp.this);
-            progressDialog.setMessage("Mohon Tunggu...");
-            progressDialog.setTitle("Proses");
+            progressDialog.setMessage(getResources().getString(R.string.progress_title1));
+            progressDialog.setTitle(getResources().getString(R.string.progress_text1));
             progressDialog.setCancelable(false);
             progressDialog.show();
             cekEmaildanPassword(nama, email, phone, pass, jenisAkun);
@@ -198,9 +196,9 @@ public class ActSignUp extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     progressDialog.dismiss();
-                    etPhone.setError("Nomor telepon sudah terdaftar");
+                    etPhone.setError(getResources().getString(R.string.error_nomor_terdaftar));
                     Snackbar snackbar = Snackbar
-                            .make(v, "Mohon maaf, nomor telepon sudah terdaftar", Snackbar.LENGTH_LONG);
+                            .make(v, getResources().getString(R.string.error_nomor_terdaftar), Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
                 else {
@@ -211,7 +209,7 @@ public class ActSignUp extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 progressDialog.dismiss();
-                Toast.makeText(ActSignUp.this, "Error, " + databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActSignUp.this, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -225,7 +223,7 @@ public class ActSignUp extends AppCompatActivity {
                 } else {
                     progressDialog.dismiss();
                     Snackbar snackbar = Snackbar
-                            .make(v, "Mohon maaf, gagal membuat user", Snackbar.LENGTH_LONG);
+                            .make(v, getResources().getString(R.string.error_unknown), Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
             }
@@ -234,14 +232,14 @@ public class ActSignUp extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 progressDialog.dismiss();
                 if(e.getMessage().toString().contains("email address is already in use")){
-                    etEmail.setError("Email sudah terdaftar");
+                    etEmail.setError(getResources().getString(R.string.error_email_terdaftar) );
                     Snackbar snackbar = Snackbar
-                            .make(v, "Mohon maaf, email sudah terdaftar. Silahkan coba email yang lain", Snackbar.LENGTH_LONG);
+                            .make(v, getResources().getString(R.string.error_email_terdaftar) , Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
                 else {
                     Snackbar snackbar = Snackbar
-                            .make(v, "Mohon maaf, " + e.getMessage().toString(), Snackbar.LENGTH_LONG);
+                            .make(v, getResources().getString(R.string.error) + e.getMessage().toString(), Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
             }
@@ -265,7 +263,7 @@ public class ActSignUp extends AppCompatActivity {
                         } else {
                             progressDialog.dismiss();
                             Snackbar snackbar = Snackbar
-                                    .make(v, "Mohon maaf, " + task.getException().getMessage().toString(), Snackbar.LENGTH_LONG);
+                                    .make(v, getResources().getString(R.string.error)  + task.getException().getMessage().toString(), Snackbar.LENGTH_LONG);
                             snackbar.show();
                         }
                     }
@@ -294,20 +292,20 @@ public class ActSignUp extends AppCompatActivity {
                             userPreference.setKEY_FOTO(localDataUser.getFoto());
                             userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
 
-                            Toast.makeText(ActSignUp.this, "Berhasil Registrasi", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ActSignUp.this, getResources().getString(R.string.toast_success_register), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
                             finish();
                         }
                     }
                 }
                 else {
-                    Toast.makeText(ActSignUp.this, "Gagal Mengambil Data Terbaru", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActSignUp.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActSignUp.this, "Gagal Mengambil Data Terbaru", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActSignUp.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
             }
         });
     }

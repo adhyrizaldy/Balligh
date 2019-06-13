@@ -12,7 +12,7 @@
         android:layout_height="@dimen/lebar_logo"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo_balligh"
-        android:layout_marginTop="@dimen/margin_super_large"
+        android:layout_marginTop="@dimen/width100"
         android:id="@+id/img_logo"
         />
     <TextView

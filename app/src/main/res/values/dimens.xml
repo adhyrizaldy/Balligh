@@ -12,9 +12,15 @@
     <dimen name="text_standard_big">18sp</dimen>
     <dimen name="text_standard_et">16sp</dimen>
     <dimen name="text_standard">15sp</dimen>
+    <dimen name="text_small">14sp</dimen>
 
-    <dimen name="margin_super_large">100dp</dimen>
-    <dimen name="margin_large_standard">60dp</dimen>
+    <dimen name="width100">100dp</dimen>
+    <dimen name="width115">115dp</dimen>
+    <dimen name="width90">90dp</dimen>
+    <dimen name="width60">60dp</dimen>
+    <dimen name="width40">40dp</dimen>
+
+
     <dimen name="margin_large">50dp</dimen>
     <dimen name="margin_big_standard">35dp</dimen>
     <dimen name="margin_big">20dp</dimen>

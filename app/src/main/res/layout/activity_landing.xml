@@ -11,7 +11,7 @@
         android:layout_width="@dimen/lebar_logo"
         android:layout_height="@dimen/lebar_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/margin_super_large"
+        android:layout_marginTop="@dimen/width100"
         android:src="@drawable/logo_balligh"
         android:id="@+id/img_logo"
         />
@@ -35,7 +35,7 @@
         android:textColor="@color/putihBiru"
         android:textSize="@dimen/text_standard_big"
         android:fontFamily="@font/roboto_regular"
-        android:layout_marginTop="@dimen/margin_large_standard"
+        android:layout_marginTop="@dimen/width60"
         android:id="@+id/text_welcome"
         />
     <Button
