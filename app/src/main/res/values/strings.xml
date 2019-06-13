@@ -29,6 +29,7 @@
     <string name="error">Error</string>
     <string name="error_fitur_not_ready">Mohon maaf, fitur ini belum tersedia</string>
     <string name="error_unknown">Mohon maaf, terjadi error yang tidak diketahui</string>
+    <string name="error_phone_not_found">Mohon maaf, nomor belum terdaftar</string>
     <string name="error_update">Gagal Mengambil Data Terbaru</string>
 
     <string name="toast_success_register">Berhasil Registrasi</string>

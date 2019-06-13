@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Featured.UserPreference;
+import com.exomatik.balligh.balligh.MainActivity;
+import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -83,13 +85,7 @@ public class ActSplashScreen extends AppCompatActivity {
             public void run()
             {
                 if (FirebaseAuth.getInstance().getCurrentUser() != null){
-                    Toast.makeText(ActSplashScreen.this, "Sudah login", Toast.LENGTH_SHORT).show();
-//                    saveData(FirebaseAuth.getInstance().getCurrentUser().getEmail());
-                    hapusData();
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
-                    finish();
-                    Toast.makeText(ActSplashScreen.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
+                    saveData(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 }
                 else {
                     Intent homeIntent = new Intent(ActSplashScreen.this, ActLanding.class);
@@ -100,12 +96,36 @@ public class ActSplashScreen extends AppCompatActivity {
         }, 2000L);
     }
 
-    private void hapusData(){
-        userPreference.setKEY_NAME(null);
-        userPreference.setKEY_EMAIL(null);
-        userPreference.setKEY_PHONE(null);
-        userPreference.setKEY_FOTO(null);
-        userPreference.setKEY_UID(null);
-        userPreference.setKEY_JENIS(null);
+    private void saveData(final String email){
+        FirebaseDatabase.getInstance().getReference("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Iterator localIterator = dataSnapshot.getChildren().iterator();
+                    while (localIterator.hasNext()) {
+                        ModelUser localDataUser = (ModelUser) ((DataSnapshot) localIterator.next()).getValue(ModelUser.class);
+                        if (localDataUser.getEmail().toString().equalsIgnoreCase(email)){
+                            userPreference.setKEY_NAME(localDataUser.getNamaLengkap());
+                            userPreference.setKEY_EMAIL(localDataUser.getEmail());
+                            userPreference.setKEY_PHONE(localDataUser.getNoHp());
+                            userPreference.setKEY_UID(localDataUser.getUid());
+                            userPreference.setKEY_FOTO(localDataUser.getFoto());
+                            userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
+
+                            startActivity(new Intent(ActSplashScreen.this, MainActivity.class));
+                            finish();
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(ActSplashScreen.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(ActSplashScreen.this, databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
