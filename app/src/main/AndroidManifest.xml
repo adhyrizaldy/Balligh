@@ -8,18 +8,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Activity.ActSplashScreen">
+        android:theme="@style/AppTheme.NoActionBar"
+        >
+        <activity android:name=".Activity.ActSplashScreen"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Activity.ActSignIn" />
-        <activity android:name=".Activity.ActSignUp" />
-        <activity android:name=".Activity.ActLanding"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.ActSignIn"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.ActSignUp"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.ActLanding"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

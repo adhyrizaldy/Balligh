@@ -61,7 +61,7 @@ public class ActSignUp extends AppCompatActivity {
         btnSignUp = (Button) findViewById(R.id.btn_sign_up);
         etNama = (EditText) findViewById(R.id.et_nama);
         etEmail = (EditText) findViewById(R.id.et_email);
-        etPhone  = (EditText) findViewById(R.id.et_nomor);
+        etPhone = (EditText) findViewById(R.id.et_nomor);
         etPass = (EditText) findViewById(R.id.et_password);
         etConfirmPass = (EditText) findViewById(R.id.et_confirm_pass);
         v = (View) findViewById(android.R.id.content);
@@ -118,14 +118,14 @@ public class ActSignUp extends AppCompatActivity {
         });
     }
 
-    private String gantiBg(String jenis){
-        switch (jenis){
-            case "Lembaga Dakwah" :
+    private String gantiBg(String jenis) {
+        switch (jenis) {
+            case "Lembaga Dakwah":
                 bgJenis1.setBackgroundResource(R.drawable.background_blue_rounded);
                 bgJenis2.setBackgroundResource(R.drawable.background_white_rounded);
                 bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
                 break;
-            case "Pengurus Masjid" :
+            case "Pengurus Masjid":
                 bgJenis1.setBackgroundResource(R.drawable.background_white_rounded);
                 bgJenis2.setBackgroundResource(R.drawable.background_blue_rounded);
                 bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
@@ -153,30 +153,29 @@ public class ActSignUp extends AppCompatActivity {
         String confirmPass = etConfirmPass.getText().toString();
 
         if (nama.isEmpty() || email.isEmpty() || phone.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()
-                || !pass.equals(confirmPass) || phone.length() < 9){
-            if (nama.isEmpty()){
+                || !pass.equals(confirmPass) || phone.length() < 9) {
+            if (nama.isEmpty()) {
                 etNama.setError(getResources().getString(R.string.error_data_kosong));
             }
-            if (email.isEmpty()){
+            if (email.isEmpty()) {
                 etEmail.setError(getResources().getString(R.string.error_data_kosong));
             }
-            if (phone.isEmpty()){
+            if (phone.isEmpty()) {
                 etPhone.setError(getResources().getString(R.string.error_data_kosong));
             }
-            if (pass.isEmpty()){
+            if (pass.isEmpty()) {
                 etPass.setError(getResources().getString(R.string.error_data_kosong));
             }
-            if (confirmPass.isEmpty()){
+            if (confirmPass.isEmpty()) {
                 etConfirmPass.setError(getResources().getString(R.string.error_data_kosong));
             }
-            if (!pass.equals(confirmPass)){
+            if (!pass.equals(confirmPass)) {
                 etConfirmPass.setError(getResources().getString(R.string.error_pass_not_same));
             }
-            if (phone.length() < 9){
+            if (phone.length() < 9) {
                 etPhone.setError(getResources().getString(R.string.error_nomor_tidak_cukup));
             }
-        }
-        else {
+        } else {
             progressDialog = new ProgressDialog(ActSignUp.this);
             progressDialog.setMessage(getResources().getString(R.string.progress_title1));
             progressDialog.setTitle(getResources().getString(R.string.progress_text1));
@@ -194,14 +193,13 @@ public class ActSignUp extends AppCompatActivity {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     progressDialog.dismiss();
                     etPhone.setError(getResources().getString(R.string.error_nomor_terdaftar));
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.error_nomor_terdaftar), Snackbar.LENGTH_LONG);
                     snackbar.show();
-                }
-                else {
+                } else {
                     prosesDaftar(nama, email, phone, pass, jenisAkun);
                 }
             }
@@ -231,13 +229,12 @@ public class ActSignUp extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 progressDialog.dismiss();
-                if(e.getMessage().toString().contains("email address is already in use")){
-                    etEmail.setError(getResources().getString(R.string.error_email_terdaftar) );
+                if (e.getMessage().toString().contains("email address is already in use")) {
+                    etEmail.setError(getResources().getString(R.string.error_email_terdaftar));
                     Snackbar snackbar = Snackbar
-                            .make(v, getResources().getString(R.string.error_email_terdaftar) , Snackbar.LENGTH_LONG);
+                            .make(v, getResources().getString(R.string.error_email_terdaftar), Snackbar.LENGTH_LONG);
                     snackbar.show();
-                }
-                else {
+                } else {
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.error) + e.getMessage().toString(), Snackbar.LENGTH_LONG);
                     snackbar.show();
@@ -263,7 +260,7 @@ public class ActSignUp extends AppCompatActivity {
                         } else {
                             progressDialog.dismiss();
                             Snackbar snackbar = Snackbar
-                                    .make(v, getResources().getString(R.string.error)  + task.getException().getMessage().toString(), Snackbar.LENGTH_LONG);
+                                    .make(v, getResources().getString(R.string.error) + task.getException().getMessage().toString(), Snackbar.LENGTH_LONG);
                             snackbar.show();
                         }
                     }
@@ -276,37 +273,26 @@ public class ActSignUp extends AppCompatActivity {
         });
     }
 
-    private void saveData(final String email){
-        FirebaseDatabase.getInstance().getReference("users").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    Iterator localIterator = dataSnapshot.getChildren().iterator();
-                    while (localIterator.hasNext()) {
-                        ModelUser localDataUser = (ModelUser) ((DataSnapshot) localIterator.next()).getValue(ModelUser.class);
-                        if (localDataUser.getEmail().toString().equalsIgnoreCase(email)){
-                            userPreference.setKEY_NAME(localDataUser.getNamaLengkap());
-                            userPreference.setKEY_EMAIL(localDataUser.getEmail());
-                            userPreference.setKEY_PHONE(localDataUser.getNoHp());
-                            userPreference.setKEY_UID(localDataUser.getUid());
-                            userPreference.setKEY_FOTO(localDataUser.getFoto());
-                            userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
+    private void saveData(final String email) {
+        sendVerificationEmail();
+    }
 
-                            Toast.makeText(ActSignUp.this, getResources().getString(R.string.toast_success_register), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
-                            finish();
-                        }
+    private void sendVerificationEmail() {
+        FirebaseAuth.getInstance().getCurrentUser()
+                .sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(ActSignUp.this, "Silahkan verifikasi email " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
+                        finish();
                     }
-                }
-                else {
-                    Toast.makeText(ActSignUp.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActSignUp.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
-            }
-        });
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(ActSignUp.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

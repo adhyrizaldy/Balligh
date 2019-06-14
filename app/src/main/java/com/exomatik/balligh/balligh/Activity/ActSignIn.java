@@ -114,7 +114,8 @@ public class ActSignIn extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     progressDialog.dismiss();
-                    saveData(user.getEmail());
+                    startActivity(new Intent(ActSignIn.this, ActSplashScreen.class));
+                    finish();
                 }else {
                     progressDialog.dismiss();
                     Snackbar snackbar = Snackbar
@@ -132,40 +133,6 @@ public class ActSignIn extends AppCompatActivity {
                 Snackbar snackbar = Snackbar
                         .make(v, "Mohon maaf, " + e.getMessage().toString() , Snackbar.LENGTH_LONG);
                 snackbar.show();
-            }
-        });
-    }
-
-    private void saveData(final String email){
-        FirebaseDatabase.getInstance().getReference("users").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    Iterator localIterator = dataSnapshot.getChildren().iterator();
-                    while (localIterator.hasNext()) {
-                        ModelUser localDataUser = (ModelUser) ((DataSnapshot) localIterator.next()).getValue(ModelUser.class);
-                        if (localDataUser.getEmail().toString().equalsIgnoreCase(email)){
-                            userPreference.setKEY_NAME(localDataUser.getNamaLengkap());
-                            userPreference.setKEY_EMAIL(localDataUser.getEmail());
-                            userPreference.setKEY_PHONE(localDataUser.getNoHp());
-                            userPreference.setKEY_UID(localDataUser.getUid());
-                            userPreference.setKEY_FOTO(localDataUser.getFoto());
-                            userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
-
-                            Toast.makeText(ActSignIn.this, getResources().getString(R.string.toast_success_login), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(ActSignIn.this, ActSplashScreen.class));
-                            finish();
-                        }
-                    }
-                }
-                else {
-                    Toast.makeText(ActSignIn.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActSignIn.this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
             }
         });
     }
