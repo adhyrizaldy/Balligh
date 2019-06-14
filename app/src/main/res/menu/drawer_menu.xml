@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:n1="http://schemas.android.com/apk/res/android"
+    >
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup1"
+        android:visible="true">
+        <item
+            n1:id="@+id/nav_kelas_ajar"
+            n1:icon="@drawable/muballigh"
+            n1:title="Profil" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup2"
+        android:visible="true">
+        <item
+            n1:id="@+id/nav_kelas_mahasiswa"
+            android:icon="@drawable/icon_jadwal_white"
+            n1:title="Jadwal Saya" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup3"
+        android:visible="true">
+        <item
+            n1:id="@+id/nav_quiz"
+            android:icon="@drawable/icon_contact_white"
+            n1:title="Kontak" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup4"
+        android:visible="true"
+        >
+        <item
+            n1:id="@+id/nav_profile"
+            android:icon="@drawable/icon_pesan_white"
+            n1:title="Pesan" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup5"
+        android:visible="true">
+        <item
+            n1:id="@+id/nav_afiliasi"
+            android:icon="@drawable/icon_afiliasi"
+            n1:title="Afiliasi" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_grup6"
+        android:visible="true">
+        <item
+            n1:id="@+id/nav_sign_out"
+            android:icon="@drawable/icon_logout"
+            n1:title="Sign Out" />
+    </group>
+</menu>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_blue_full"
     android:padding="@dimen/margin_big"
-    tools:context="com.exomatik.balligh.balligh.Activity.ActSignUp">
+    tools:context="com.exomatik.balligh.balligh.Activity.Authentication.ActSignUp">
 
     <RelativeLayout
         android:layout_width="match_parent"

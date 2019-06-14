@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.exomatik.balligh.balligh.Activity.ActLanding"
+    tools:context="com.exomatik.balligh.balligh.Activity.Authentication.ActLanding"
     android:background="@drawable/background_blue_full"
     >
     <ImageView
