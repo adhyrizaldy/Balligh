@@ -1,5 +1,6 @@
 package com.exomatik.balligh.balligh.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.Authentication.ActLanding;
+import com.exomatik.balligh.balligh.Activity.Authentication.ActSignUp;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
@@ -31,6 +33,7 @@ public class ActSplashScreen extends AppCompatActivity {
     private boolean back = false;
     private UserPreference userPreference;
     private Button btnRefresh, btnSignOut, btnSend;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +53,27 @@ public class ActSplashScreen extends AppCompatActivity {
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(ActSplashScreen.this);
+                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
+                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
+                progressDialog.setCancelable(false);
+                progressDialog.show();
                 FirebaseAuth.getInstance().signOut();
                 hapusUser();
+                startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
+                finish();
+                progressDialog.dismiss();
             }
         });
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(ActSplashScreen.this);
+                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
+                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
+                progressDialog.setCancelable(false);
+                progressDialog.show();
                 sendVerificationEmail();
             }
         });
@@ -65,6 +81,11 @@ public class ActSplashScreen extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(ActSplashScreen.this);
+                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
+                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
+                progressDialog.setCancelable(false);
+                progressDialog.show();
                 refreshCekEmail();
             }
         });
@@ -78,12 +99,14 @@ public class ActSplashScreen extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
                         startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
                         finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
                 Toast.makeText(ActSplashScreen.this, "Error " + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -95,12 +118,14 @@ public class ActSplashScreen extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
                         Toast.makeText(ActSplashScreen.this, "Silahkan verifikasi email " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
                         Toast.makeText(ActSplashScreen.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
                     }
                 });

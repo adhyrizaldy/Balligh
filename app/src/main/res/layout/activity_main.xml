@@ -12,38 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="?actionBarSize"-->
-            <!--apps:navigationIcon="@drawable/icon_menu"-->
-            <!--apps:title="Balligh"-->
-            <!--apps:titleTextColor="@color/putihAsli"-->
-            <!--android:layout_gravity="center_horizontal"-->
-            <!--android:gravity="center_horizontal"-->
-            <!--android:textAlignment="center"-->
-
-            <!--android:background="@drawable/tesss"-->
-            <!--&gt;-->
-            <!--<RelativeLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--&gt;-->
-                <!--<ImageView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:src="@drawable/background_blue_full"-->
-                    <!--android:scaleType="fitXY"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Balligh"-->
-                    <!--android:textColor="@color/putihAsli"-->
-                    <!--android:layout_centerHorizontal="true"-->
-                    <!--/>-->
-            <!--</RelativeLayout>-->
-        <!--</android.support.v7.widget.Toolbar>-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_top"
             android:layout_height="?attr/actionBarSize"
@@ -100,7 +68,7 @@
     <android.support.design.widget.NavigationView xmlns:n3="http://schemas.android.com/apk/res-auto"
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
         n3:headerLayout="@layout/nav_header"
         n3:menu="@menu/drawer_menu"
@@ -108,5 +76,60 @@
         android:theme="@style/ThemeOverlay.AppCompat.Light"
         n3:itemIconTint="@color/putihAsli"
         n3:itemTextColor="@color/putihAsli"
-        />
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width120"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:background="@color/gray1"
+            android:padding="@dimen/width30"
+            >
+            <ImageView
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/width30"
+                android:src="@drawable/icon_facebook"
+                android:id="@+id/img_facebook"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard"
+                />
+            <ImageView
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/width30"
+                android:src="@drawable/icon_twiter"
+                android:id="@+id/img_twitter"
+                android:layout_toRightOf="@id/img_facebook"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard"
+                />
+            <ImageView
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/width30"
+                android:src="@drawable/icon_linkedin"
+                android:id="@+id/img_link"
+                android:layout_toRightOf="@id/img_twitter"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard"
+                />
+            <ImageView
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/width30"
+                android:src="@drawable/icon_google"
+                android:id="@+id/img_google"
+                android:layout_toRightOf="@+id/img_link"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard"
+                />
+            <ImageView
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/width30"
+                android:src="@drawable/icon_pinterest"
+                android:id="@+id/img_pinterest"
+                android:layout_toRightOf="@id/img_google"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard"
+                />
+        </RelativeLayout>
+    </android.support.design.widget.NavigationView>
+
 </android.support.v4.widget.DrawerLayout>

@@ -1,5 +1,7 @@
 package com.exomatik.balligh.balligh.Activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,14 +16,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
+import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private UserPreference userPreference;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        userPreference = new UserPreference(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_top);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -52,9 +61,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_profile) {
+            // Handle the camera action
+        }
+        else if (id == R.id.nav_sign_out){
+            progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage(getResources().getString(R.string.progress_title1));
+            progressDialog.setTitle(getResources().getString(R.string.progress_text1));
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            FirebaseAuth.getInstance().signOut();
+            hapusUser();
+            startActivity(new Intent(MainActivity.this, ActSplashScreen.class));
+            progressDialog.dismiss();
+            finish();
+        }
+//        else if (id == R.id.nav_gallery) {
 //
 //        } else if (id == R.id.nav_slideshow) {
 //
@@ -69,5 +91,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void hapusUser() {
+        userPreference.setKEY_NAME(null);
+        userPreference.setKEY_EMAIL(null);
+        userPreference.setKEY_PHONE(null);
+        userPreference.setKEY_FOTO(null);
+        userPreference.setKEY_UID(null);
+        userPreference.setKEY_JENIS(null);
     }
 }
