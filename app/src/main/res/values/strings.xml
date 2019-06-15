@@ -16,6 +16,13 @@
     <string name="et_password">Password</string>
     <string name="et_konfirm_password">Konfirmasi Password</string>
 
+    <string name="text_jadwal1">STATUS JADWAL 2019</string>
+
+    <string name="text_kutbah_jumat">Khutbah Jumat</string>
+    <string name="text_ceramah_tarwih">Ceramah Tarwih</string>
+    <string name="text_jumlah_tarwih">29</string>
+    <string name="text_jumlah_khutbah">52</string>
+
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
     <string name="text_sudah_punya_akun">Sudah punya akun?</string>

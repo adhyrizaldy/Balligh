@@ -36,7 +36,7 @@ public class ActSignIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.act_sign_in);
 
         btnSignIn = (Button) findViewById(R.id.btn_sign_in);
         etPhone = (EditText) findViewById(R.id.et_nomor);

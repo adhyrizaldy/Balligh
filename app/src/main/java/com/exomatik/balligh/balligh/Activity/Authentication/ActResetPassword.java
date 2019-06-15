@@ -1,6 +1,5 @@
 package com.exomatik.balligh.balligh.Activity.Authentication;
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -36,7 +35,7 @@ public class ActResetPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reset_password);
+        setContentView(R.layout.act_reset_password);
 
         btnSignUp = (TextView) findViewById(R.id.text_sign_up);
         btnKirim = (Button) findViewById(R.id.btn_kirim);

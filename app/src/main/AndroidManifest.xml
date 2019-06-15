@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".Activity.ActMainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.Authentication.ActSignIn"
@@ -30,7 +30,8 @@
         <activity
             android:name=".Activity.Authentication.ActLanding"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.Authentication.ActResetPassword"></activity>
+        <activity android:name=".Activity.Authentication.ActResetPassword" />
+        <activity android:name=".Activity.Authentication.ActWelcome"></activity>
     </application>
 
 </manifest>

@@ -41,6 +41,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 
+    //seekbar
+    compile 'com.xw.repo:bubbleseekbar:3.16'
 }
 
 apply plugin: 'com.google.gms.google-services'

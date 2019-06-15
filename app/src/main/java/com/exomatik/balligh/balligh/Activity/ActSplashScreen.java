@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.Authentication.ActLanding;
-import com.exomatik.balligh.balligh.Activity.Authentication.ActSignUp;
+import com.exomatik.balligh.balligh.Activity.Authentication.ActWelcome;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
@@ -38,7 +38,7 @@ public class ActSplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.act_splash_screen);
 
         textService = (TextView) findViewById(R.id.text_maintenance);
         btnRefresh = (Button) findViewById(R.id.btn_refresh);
@@ -227,7 +227,7 @@ public class ActSplashScreen extends AppCompatActivity {
                             userPreference.setKEY_FOTO(localDataUser.getFoto());
                             userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
 
-                            startActivity(new Intent(ActSplashScreen.this, MainActivity.class));
+                            startActivity(new Intent(ActSplashScreen.this, ActWelcome.class));
                             finish();
                         }
                     }

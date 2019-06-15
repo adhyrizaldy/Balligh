@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.ActSplashScreen;
-import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,7 +45,7 @@ public class ActSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.act_sign_up);
 
         btnJenis1 = (RelativeLayout) findViewById(R.id.rl_ld);
         btnJenis2 = (RelativeLayout) findViewById(R.id.rl_pm);

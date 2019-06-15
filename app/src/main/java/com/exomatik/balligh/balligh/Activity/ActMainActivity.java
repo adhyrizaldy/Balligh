@@ -3,31 +3,27 @@ package com.exomatik.balligh.balligh.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.RelativeLayout;
 
 import com.exomatik.balligh.balligh.Featured.UserPreference;
+import com.exomatik.balligh.balligh.Fragment.ContentMain;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ActMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private UserPreference userPreference;
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.act_main);
 
 
         userPreference = new UserPreference(this);
@@ -43,6 +39,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (userPreference.getKEY_JENIS().equals("Muballigh")){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container
+                    , new ContentMain()).commit();
+        }
     }
 
     @Override
@@ -65,14 +66,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // Handle the camera action
         }
         else if (id == R.id.nav_sign_out){
-            progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog = new ProgressDialog(ActMainActivity.this);
             progressDialog.setMessage(getResources().getString(R.string.progress_title1));
             progressDialog.setTitle(getResources().getString(R.string.progress_text1));
             progressDialog.setCancelable(false);
             progressDialog.show();
             FirebaseAuth.getInstance().signOut();
             hapusUser();
-            startActivity(new Intent(MainActivity.this, ActSplashScreen.class));
+            startActivity(new Intent(ActMainActivity.this, ActSplashScreen.class));
             progressDialog.dismiss();
             finish();
         }
