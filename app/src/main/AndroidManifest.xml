@@ -30,7 +30,7 @@
         <activity
             android:name=".Activity.Authentication.ActLanding"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.Authentication.RecoverPassword"></activity>
+        <activity android:name=".Activity.Authentication.ActResetPassword"></activity>
     </application>
 
 </manifest>

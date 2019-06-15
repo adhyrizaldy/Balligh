@@ -8,6 +8,7 @@
 
     <string name="btn_sign_up">Sign Up</string>
     <string name="btn_sign_in">Sign In</string>
+    <string name="btn_kirim">Kirim</string>
 
     <string name="et_nama_lengkap">Nama Lengkap</string>
     <string name="et_email">Email</string>
@@ -18,8 +19,12 @@
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
     <string name="text_sudah_punya_akun">Sudah punya akun?</string>
+    <string name="text_belum_punya_akun">Belum punya akun?</string>
     <string name="text_sign_in">Sign in!</string>
+    <string name="text_sign_up">Sign up!</string>
     <string name="text_forget_pass">Lupa Password?</string>
+    <string name="text_reset_pass">Recover Password</string>
+    <string name="text_reset_password">Silahkan Masukkan Nomor HP anda dan kami akan mengirimkan kode recovery</string>
 
     <string name="error_data_kosong">Data tidak boleh kosong!</string>
     <string name="error_pass_not_same">Password tidak sesuai!</string>

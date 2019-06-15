@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.ActSplashScreen;
-import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,7 +31,7 @@ public class ActSignIn extends AppCompatActivity {
     private Button btnSignIn;
     private ProgressDialog progressDialog;
     private View v;
-    private UserPreference userPreference;
+    private TextView btnResetPassword, btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,30 @@ public class ActSignIn extends AppCompatActivity {
         btnSignIn = (Button) findViewById(R.id.btn_sign_in);
         etPhone = (EditText) findViewById(R.id.et_nomor);
         etPassword = (EditText) findViewById(R.id.et_password);
+        btnResetPassword = (TextView) findViewById(R.id.text_lupa);
+        btnSignUp = (TextView) findViewById(R.id.text_sign_up);
         v = (View) findViewById(android.R.id.content);
-
-        userPreference = new UserPreference(this);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cekEditText();
+            }
+        });
+
+        btnResetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActSignIn.this, ActResetPassword.class));
+                finish();
+            }
+        });
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActSignIn.this, ActSignUp.class));
+                finish();
             }
         });
     }

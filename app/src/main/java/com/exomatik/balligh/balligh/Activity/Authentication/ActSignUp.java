@@ -42,7 +42,6 @@ public class ActSignUp extends AppCompatActivity {
     private String data1;
     private String data2;
     private String data3;
-    private UserPreference userPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,6 @@ public class ActSignUp extends AppCompatActivity {
         etConfirmPass = (EditText) findViewById(R.id.et_confirm_pass);
         v = (View) findViewById(android.R.id.content);
 
-        userPreference = new UserPreference(this);
         data1 = getResources().getString(R.string.jenis_akun_1);
         data2 = getResources().getString(R.string.jenis_akun_2);
         data3 = getResources().getString(R.string.jenis_akun_3);
