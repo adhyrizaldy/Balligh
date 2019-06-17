@@ -270,25 +270,7 @@ public class ActSignUp extends AppCompatActivity {
     }
 
     private void saveData(final String email) {
-        sendVerificationEmail();
-    }
-
-    private void sendVerificationEmail() {
-        FirebaseAuth.getInstance().getCurrentUser()
-                .sendEmailVerification()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(ActSignUp.this, "Silahkan verifikasi email " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ActSignUp.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        startActivity(new Intent(ActSignUp.this, ActSplashScreen.class));
+        finish();
     }
 }

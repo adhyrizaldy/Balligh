@@ -29,11 +29,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Iterator;
 
 public class ActSplashScreen extends AppCompatActivity {
-    private TextView textService;
+    private TextView textService, textVerification;
     private boolean back = false;
     private UserPreference userPreference;
-    private Button btnRefresh, btnSignOut, btnSend;
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,75 +39,13 @@ public class ActSplashScreen extends AppCompatActivity {
         setContentView(R.layout.act_splash_screen);
 
         textService = (TextView) findViewById(R.id.text_maintenance);
-        btnRefresh = (Button) findViewById(R.id.btn_refresh);
-        btnSend = (Button) findViewById(R.id.btn_send);
-        btnSignOut = (Button) findViewById(R.id.btn_keluar);
+        textVerification = (TextView) findViewById(R.id.text_verification);
 
         userPreference = new UserPreference(this);
-        btnSend.setVisibility(View.GONE);
-        btnSignOut.setVisibility(View.GONE);
-        btnRefresh.setVisibility(View.GONE);
-
-        btnSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(ActSplashScreen.this);
-                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
-                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
-                progressDialog.setCancelable(false);
-                progressDialog.show();
-                FirebaseAuth.getInstance().signOut();
-                hapusUser();
-                startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
-                finish();
-                progressDialog.dismiss();
-            }
-        });
-
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(ActSplashScreen.this);
-                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
-                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
-                progressDialog.setCancelable(false);
-                progressDialog.show();
-                sendVerificationEmail();
-            }
-        });
-
-        btnRefresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(ActSplashScreen.this);
-                progressDialog.setMessage(getResources().getString(R.string.progress_title1));
-                progressDialog.setTitle(getResources().getString(R.string.progress_text1));
-                progressDialog.setCancelable(false);
-                progressDialog.show();
-                refreshCekEmail();
-            }
-        });
+        textVerification.setVisibility(View.GONE);
+        back = false;
 
         getDataMaintenance();
-    }
-
-    private void refreshCekEmail() {
-        FirebaseAuth.getInstance().getCurrentUser()
-                .reload()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        progressDialog.dismiss();
-                        startActivity(new Intent(ActSplashScreen.this, ActSplashScreen.class));
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
-                Toast.makeText(ActSplashScreen.this, "Error " + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void sendVerificationEmail() {
@@ -118,15 +54,17 @@ public class ActSplashScreen extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        progressDialog.dismiss();
-                        Toast.makeText(ActSplashScreen.this, "Silahkan verifikasi email " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
+                        back = true;
+                        textVerification.setVisibility(View.VISIBLE);
+                        textVerification.setText(getResources().getString(R.string.text_verifikasi));
+                        Toast.makeText(ActSplashScreen.this, getResources().getString(R.string.text_verifikasi) + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
+                        FirebaseAuth.getInstance().signOut();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        progressDialog.dismiss();
-                        Toast.makeText(ActSplashScreen.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActSplashScreen.this, getResources().getString(R.string.error_send)+ e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -205,9 +143,8 @@ public class ActSplashScreen extends AppCompatActivity {
         if (user.isEmailVerified()){
             saveData(FirebaseAuth.getInstance().getCurrentUser().getEmail());
         }else {
-            btnSend.setVisibility(View.VISIBLE);
-            btnSignOut.setVisibility(View.VISIBLE);
-            btnRefresh.setVisibility(View.VISIBLE);
+            hapusUser();
+            sendVerificationEmail();
         }
     }
 

@@ -6,7 +6,7 @@
         android:id="@+id/nav_grup1"
         android:visible="true">
         <item
-            n1:id="@+id/nav_kelas_ajar"
+            n1:id="@+id/nav_profil"
             n1:icon="@drawable/muballigh"
             n1:title="Profil" />
     </group>

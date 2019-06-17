@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Fragment.ContentMain;
 import com.exomatik.balligh.balligh.R;
@@ -62,8 +63,9 @@ public class ActMainActivity extends AppCompatActivity implements NavigationView
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_profile) {
-            // Handle the camera action
+        if (id == R.id.nav_profil) {
+            startActivity(new Intent(ActMainActivity.this, ActProfilMuballigh.class));
+            finish();
         }
         else if (id == R.id.nav_sign_out){
             progressDialog = new ProgressDialog(ActMainActivity.this);

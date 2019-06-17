@@ -22,6 +22,7 @@
     <string name="text_ceramah_tarwih">Ceramah Tarwih</string>
     <string name="text_jumlah_tarwih">29</string>
     <string name="text_jumlah_khutbah">52</string>
+    <string name="text_verifikasi">Silahkan verifikasi email </string>
 
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
@@ -32,17 +33,19 @@
     <string name="text_forget_pass">Lupa Password?</string>
     <string name="text_reset_pass">Recover Password</string>
     <string name="text_reset_password">Silahkan Masukkan Nomor HP anda dan kami akan mengirimkan kode recovery</string>
+    <string name="text_profil_muballigh">Profil Muballigh</string>
 
     <string name="error_data_kosong">Data tidak boleh kosong!</string>
     <string name="error_pass_not_same">Password tidak sesuai!</string>
     <string name="error_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
-    <string name="error_nomor_terdaftar">Nomor telepon sudah terdaftar</string>
-    <string name="error_email_terdaftar">Email sudah terdaftar</string>
-    <string name="error">Error</string>
-    <string name="error_fitur_not_ready">Mohon maaf, fitur ini belum tersedia</string>
-    <string name="error_unknown">Mohon maaf, terjadi error yang tidak diketahui</string>
-    <string name="error_phone_not_found">Mohon maaf, nomor belum terdaftar</string>
-    <string name="error_update">Gagal Mengambil Data Terbaru</string>
+    <string name="error_nomor_terdaftar">Nomor telepon sudah terdaftar </string>
+    <string name="error_email_terdaftar">Email sudah terdaftar </string>
+    <string name="error">Error </string>
+    <string name="error_fitur_not_ready">Mohon maaf, fitur ini belum tersedia </string>
+    <string name="error_unknown">Mohon maaf, terjadi error yang tidak diketahui </string>
+    <string name="error_phone_not_found">Mohon maaf, nomor belum terdaftar </string>
+    <string name="error_update">Gagal Mengambil Data Terbaru </string>
+    <string name="error_send">Gagal Mengirim Data </string>
 
     <string name="toast_success_register">Berhasil Registrasi</string>
     <string name="toast_success_login">Berhasil Login</string>

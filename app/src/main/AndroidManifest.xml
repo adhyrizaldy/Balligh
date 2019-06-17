@@ -31,7 +31,9 @@
             android:name=".Activity.Authentication.ActLanding"
             android:screenOrientation="portrait" />
         <activity android:name=".Activity.Authentication.ActResetPassword" />
-        <activity android:name=".Activity.Authentication.ActWelcome"></activity>
+        <activity android:name=".Activity.Authentication.ActWelcome" />
+        <activity android:name=".Activity.Muballigh.ActProfilMuballigh" />
+        <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh"></activity>
     </application>
 
 </manifest>

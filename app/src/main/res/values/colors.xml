@@ -8,10 +8,13 @@
     <color name="putihGelap1">#b1b1b1</color>
     <color name="putihGelap2">#878787</color>
     <color name="putihGelap3">#5E5E5E</color>
+    <color name="putihGelap4">#6B6B6B</color>
 
     <color name="putihBiru">#4E62E6</color>
     <color name="putihBiruGelap">#2035c3</color>
     <color name="putihBiruGelap2">#051365</color>
+
+    <color name="biruGelap1">#1A237E</color>
 
     <color name="hitamAsli">#000000</color>
     <color name="gray1">#606060</color>

@@ -25,6 +25,8 @@
         android:text="Ahlan Wa sahlan"
         android:textColor="@color/putihAsli"
         android:textSize="@dimen/text_small"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:fontFamily="@font/roboto_regular"
         android:id="@+id/text_user"
         />

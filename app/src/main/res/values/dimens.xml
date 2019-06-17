@@ -23,6 +23,7 @@
     <dimen name="width180">180dp</dimen>
     <dimen name="width200">200dp</dimen>
     <dimen name="width130">130dp</dimen>
+    <dimen name="width150">150dp</dimen>
     <dimen name="width115">115dp</dimen>
     <dimen name="width90">90dp</dimen>
     <dimen name="width80">80dp</dimen>
@@ -39,6 +40,10 @@
     <dimen name="margin_standard">10dp</dimen>
     <dimen name="margin_small">5dp</dimen>
     <dimen name="margin_very_small">1dp</dimen>
+
+    <dimen name="margin_mines_30">-30dp</dimen>
+    <dimen name="margin_mines_standard_big">-15dp</dimen>
+    <dimen name="margin_mines_standard">-10dp</dimen>
     <dimen name="margin_mines_very_small">-2dp</dimen>
 
     <dimen name="width_max">320dp</dimen>
