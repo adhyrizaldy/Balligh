@@ -29,10 +29,11 @@
     </style>
 
     <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textSize">@dimen/text_standard_et</item>
         <item name="android:textColor">@color/putihGelap4</item>
         <item name="android:textStyle">normal</item>
         <item name="textAllCaps">true</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
 </resources>

@@ -9,6 +9,7 @@
     <color name="putihGelap2">#878787</color>
     <color name="putihGelap3">#5E5E5E</color>
     <color name="putihGelap4">#6B6B6B</color>
+    <color name="putihGelap5">#DADADA</color>
 
     <color name="putihBiru">#4E62E6</color>
     <color name="putihBiruGelap">#2035c3</color>
@@ -21,6 +22,8 @@
 
     <color name="yellowAsli">#FDEA03</color>
     <color name="yellowGelap1">#c7b802</color>
+
+    <color name="orange">#FF5722</color>
 
     <color name="blueAqua">#00F6FF</color>
 </resources>
