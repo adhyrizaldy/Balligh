@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.exomatik.balligh.balligh">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
@@ -18,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
         <activity
             android:name=".Activity.ActMainActivity"
             android:screenOrientation="portrait" />
@@ -33,7 +41,7 @@
         <activity android:name=".Activity.Authentication.ActResetPassword" />
         <activity android:name=".Activity.Authentication.ActWelcome" />
         <activity android:name=".Activity.Muballigh.ActProfilMuballigh" />
-        <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh"></activity>
+        <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh" />
     </application>
 
 </manifest>

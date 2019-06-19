@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_orange"
     tools:context="com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh">
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
     <RelativeLayout
         android:id="@+id/customToolbar"
         android:layout_width="match_parent"
@@ -61,7 +58,6 @@
             android:layout_height="@dimen/width150"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/margin_big"
-            android:src="@drawable/logo_balligh"
             app:civ_border_color="@color/putihAsli"
             app:civ_border_width="@dimen/margin_very_small" />
     </RelativeLayout>
@@ -79,7 +75,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="H. Burhanuddin"
             android:textAllCaps="true"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_standard_big"
@@ -92,7 +87,6 @@
             android:layout_below="@+id/text_nama"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="(Lc., M.Th.I)"
             android:textColor="@color/putihGelap4"
             android:textSize="@dimen/text_small" />
 
@@ -103,7 +97,6 @@
             android:layout_below="@+id/text_gelar"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Somba Opu, Gowa"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_small"
             android:textStyle="bold" />
@@ -129,8 +122,7 @@
             android:layout_below="@+id/text_kualifikasi"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
-            android:maxLines="2"
-            android:text="Hadits, tarikh, tafsir, bahasa arab, thibun nabawi, sirah nabawiyah"
+            android:maxLines="3"
             android:textAlignment="center"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_small" />
@@ -155,8 +147,7 @@
             android:layout_below="@+id/text_kesediaan"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
-            android:maxLines="2"
-            android:text="Hadits, tarikh, tafsir, bahasa arab, thibun nabawi, sirah nabawiyah"
+            android:maxLines="3"
             android:textAlignment="center"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_small" />
@@ -263,4 +254,4 @@
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_standard" />
     </RelativeLayout>
-</RelativeLayout><!--</ScrollView>-->
+</RelativeLayout>

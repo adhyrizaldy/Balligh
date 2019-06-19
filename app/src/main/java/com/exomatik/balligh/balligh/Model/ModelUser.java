@@ -5,17 +5,16 @@ package com.exomatik.balligh.balligh.Model;
  */
 
 public class ModelUser {
-    String namaLengkap, email, noHp, uid, foto, jenisAkun;
+    String namaLengkap, email, noHp, uid, jenisAkun;
 
     public ModelUser() {
     }
 
-    public ModelUser(String namaLengkap, String email, String noHp, String uid, String foto, String jenisAkun) {
+    public ModelUser(String namaLengkap, String email, String noHp, String uid, String jenisAkun) {
         this.namaLengkap = namaLengkap;
         this.email = email;
         this.noHp = noHp;
         this.uid = uid;
-        this.foto = foto;
         this.jenisAkun = jenisAkun;
     }
 
@@ -49,14 +48,6 @@ public class ModelUser {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public String getJenisAkun() {

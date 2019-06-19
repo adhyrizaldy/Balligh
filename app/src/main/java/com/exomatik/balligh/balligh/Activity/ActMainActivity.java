@@ -2,6 +2,7 @@ package com.exomatik.balligh.balligh.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,22 +11,26 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Fragment.ContentMain;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ActMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private UserPreference userPreference;
     private ProgressDialog progressDialog;
+    private CircleImageView imgUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
-
 
         userPreference = new UserPreference(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_top);
@@ -40,6 +45,16 @@ public class ActMainActivity extends AppCompatActivity implements NavigationView
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View localView = navigationView.getHeaderView(0);
+        imgUser = ((CircleImageView) localView.findViewById(R.id.image_person));
+
+        if (userPreference.getKEY_FOTO() != null){
+            Uri localUri = Uri.parse(userPreference.getKEY_FOTO());
+            Picasso.with(this).load(localUri).into(imgUser);
+        }else {
+            imgUser.setImageResource(R.drawable.logo_balligh);
+        }
 
         if (userPreference.getKEY_JENIS().equals("Muballigh")){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container

@@ -28,11 +28,17 @@ public class ActWelcome extends AppCompatActivity {
         imgUser = (CircleImageView) findViewById(R.id.img_user);
 
         userPreference = new UserPreference(this);
-
         setData();
     }
 
     private void setData() {
+        if (userPreference.getKEY_FOTO() != null){
+            Uri localUri = Uri.parse(userPreference.getKEY_FOTO());
+            Picasso.with(this).load(localUri).into(imgUser);
+        }else {
+            imgUser.setImageResource(R.drawable.logo_balligh);
+        }
+
         switch (userPreference.getKEY_JENIS()) {
             case "Muballigh":
                 textUser.setText("Ahlan Wa Sahlan Ustadz \n " + userPreference.getKEY_NAME());
@@ -49,13 +55,6 @@ public class ActWelcome extends AppCompatActivity {
             case "Masyarakat":
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
-        }
-
-        if (userPreference.getKEY_FOTO() != null){
-            Uri localUri = Uri.parse(userPreference.getKEY_FOTO());
-            Picasso.with(this).load(localUri).into(imgUser);
-        }else {
-            imgUser.setImageResource(R.drawable.logo_balligh);
         }
 
         new Handler().postDelayed(new Runnable() {

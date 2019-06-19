@@ -5,6 +5,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.exomatik.balligh.balligh.Adapter.ViewPagerAdapter;
 import com.exomatik.balligh.balligh.Fragment.fragAfiliasiMuballigh;
@@ -16,12 +18,14 @@ import com.exomatik.balligh.balligh.R;
 public class ActEditProfilMuballigh extends AppCompatActivity {
     private TabLayout tabKategori;
     private ViewPager viewKategori;
+    private ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_edit_profil_muballigh);
 
+        btnBack = (ImageView) findViewById(R.id.img_back);
         tabKategori = (TabLayout) findViewById(R.id.tab_menu_edit);
         viewKategori = (ViewPager) findViewById(R.id.view_menu_edit);
 
@@ -35,10 +39,18 @@ public class ActEditProfilMuballigh extends AppCompatActivity {
         viewKategori.setAdapter(adapterKategori);
         tabKategori.setupWithViewPager(viewKategori);
 
-        tabKategori.getTabAt(0).setText("Biodata");
-        tabKategori.getTabAt(1).setText("Pendidikan");
-        tabKategori.getTabAt(2).setText("Afiliasi Lembaga");
-        tabKategori.getTabAt(3).setText("Kualifikasi");
+        tabKategori.getTabAt(0).setText(getResources().getString(R.string.text_frag_biodata));
+        tabKategori.getTabAt(1).setText(getResources().getString(R.string.text_frag_pendidikan));
+        tabKategori.getTabAt(2).setText(getResources().getString(R.string.text_frag_afiliasi));
+        tabKategori.getTabAt(3).setText(getResources().getString(R.string.text_frag_kualifikasi));
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActEditProfilMuballigh.this, ActProfilMuballigh.class));
+                finish();
+            }
+        });
     }
 
     @Override

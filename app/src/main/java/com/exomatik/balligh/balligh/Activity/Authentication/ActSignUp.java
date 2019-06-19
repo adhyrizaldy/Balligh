@@ -241,7 +241,7 @@ public class ActSignUp extends AppCompatActivity {
 
     private void addUsertoFirebase(FirebaseUser firebaseUser, final String nama,
                                    final String email, final String phone, final String jenis) {
-        final ModelUser userData = new ModelUser(nama, email, phone, firebaseUser.getUid(), null, jenis);
+        final ModelUser userData = new ModelUser(nama, email, phone, firebaseUser.getUid(), jenis);
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
         database.child("users")

@@ -9,11 +9,11 @@
     n1:orientation="vertical"
     >
 
-    <de.hdodenhof.circleimageview.CircleImageView xmlns:n2="http://schemas.android.com/apk/res-auto"
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:n2="http://schemas.android.com/apk/res-auto"
         n1:id="@+id/image_person"
         n1:layout_width="@dimen/width60"
         n1:layout_height="@dimen/width60"
-        n1:src="@drawable/logo_balligh"
         n2:civ_circle_background_color="@color/putihAsli"
         n2:civ_border_width="@dimen/margin_very_small"
         n2:civ_border_color="@color/putihAsli"

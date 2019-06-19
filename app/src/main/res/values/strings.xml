@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="google_maps_key">AIzaSyDTIvPOsKEL7z6wBmQak9ggvVcvwaWUmVQ</string>
 
     <string name="btn_sign_up">Sign Up</string>
     <string name="btn_sign_in">Sign In</string>
@@ -15,6 +16,19 @@
     <string name="et_nomor_hp">Nomor HP</string>
     <string name="et_password">Password</string>
     <string name="et_konfirm_password">Konfirmasi Password</string>
+    <string name="et_alamat2">Alamat Lengkap</string>
+    <string name="et_alamat">Tulis Alamat Lengkap</string>
+    <string name="et_kecamatan">Kecamatan</string>
+    <string name="et_kota">Kabupaten/Kota</string>
+    <string name="et_provinsi">Provinsi</string>
+    <string name="et_format_tanggal">dd/mm/yyyy</string>
+    <string name="et_tanggal_lahir">Tanggal Lahir</string>
+    <string name="et_tempat_lahir">Tempat Lahir</string>
+    <string name="et_jk_laki">Laki-Laki</string>
+    <string name="et_jk_perempuan">Perempuan</string>
+    <string name="et_jk">Jenis Kelamin</string>
+
+    <string name="et_alamat_muballigh">Alamat Muballigh</string>
 
     <string name="text_jadwal1">STATUS JADWAL 2019</string>
 
@@ -35,6 +49,11 @@
     <string name="text_reset_password">Silahkan Masukkan Nomor HP anda dan kami akan mengirimkan kode recovery</string>
     <string name="text_profil_muballigh">Profil Muballigh</string>
 
+    <string name="text_frag_biodata">Biodata</string>
+    <string name="text_frag_pendidikan">Pendidikan</string>
+    <string name="text_frag_afiliasi">Afiliasi Lembaga</string>
+    <string name="text_frag_kualifikasi">Kualifikasi</string>
+
     <string name="error_data_kosong">Data tidak boleh kosong!</string>
     <string name="error_pass_not_same">Password tidak sesuai!</string>
     <string name="error_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
@@ -46,6 +65,9 @@
     <string name="error_phone_not_found">Mohon maaf, nomor belum terdaftar </string>
     <string name="error_update">Gagal Mengambil Data Terbaru </string>
     <string name="error_send">Gagal Mengirim Data </string>
+    <string name="error_jk_not_found">Mohon pilih salah satu Jenis Kelamin</string>
+    <string name="error_prov_not_found">Mohon pilih salah satu Provinsi yang Tersedia</string>
+    <string name="error_kota_not_found">Mohon pilih salah satu Kota/Kabupaten yang Tersedia</string>
 
     <string name="toast_success_register">Berhasil Registrasi</string>
     <string name="toast_success_login">Berhasil Login</string>
@@ -57,6 +79,8 @@
 
     <string name="progress_title1">Mohon Tunggu...</string>
     <string name="progress_text1">Proses</string>
+
+    <string name="btn_update">Update</string>
 
     <string name="digit_nama">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_ .,</string>
     <string name="digit_email">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_@.</string>
