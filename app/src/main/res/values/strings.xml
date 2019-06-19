@@ -28,7 +28,22 @@
     <string name="et_jk_perempuan">Perempuan</string>
     <string name="et_jk">Jenis Kelamin</string>
 
+    <string name="et_nama_perguruan">Nama Perguruan Tinggi</string>
+    <string name="et_nama_pt">Nama PT</string>
+    <string name="et_kota_perguruan">Kota PT</string>
+    <string name="et_tahun_perguruan">Tahun Tamat</string>
+    <string name="et_tahun_pt">Tahun</string>
+    <string name="et_jurusan_perguruan">Jurusan</string>
+    <string name="et_gelar_pt">Gelar Akademik</string>
+    <string name="et_gelar_s1">S.Ag.</string>
+    <string name="et_gelar_s2">M.Ag.</string>
+    <string name="et_gelar_s3">Dr.</string>
+
     <string name="et_alamat_muballigh">Alamat Muballigh</string>
+
+    <string name="text_pendidikan1">Pendidikan  S1</string>
+    <string name="text_pendidikan2">Pendidikan  S2</string>
+    <string name="text_pendidikan3">Pendidikan  S3</string>
 
     <string name="text_jadwal1">STATUS JADWAL 2019</string>
 
