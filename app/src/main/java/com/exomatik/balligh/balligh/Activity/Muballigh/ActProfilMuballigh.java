@@ -5,13 +5,12 @@ import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.exomatik.balligh.balligh.Activity.ActMainActivity;
-import com.exomatik.balligh.balligh.Activity.ActSplashScreen;
-import com.exomatik.balligh.balligh.Activity.Authentication.ActWelcome;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelBiodataMuballigh;
 import com.exomatik.balligh.balligh.Model.ModelPendidikan;
@@ -24,7 +23,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -84,6 +82,94 @@ public class ActProfilMuballigh extends AppCompatActivity {
         textNama.setText(userPreference.getKEY_NAME());
         getBioMuballigh();
         getPendMuballigh();
+        getKeilmuanMuballigh();
+        getTablighMuballigh();
+    }
+
+    private void getKeilmuanMuballigh() {
+        FirebaseDatabase.getInstance()
+                .getReference(userPreference.getKEY_JENIS())
+                .child(getResources().getString(R.string.text_frag_kualifikasi))
+                .child(userPreference.getKEY_PHONE())
+                .child(getResources().getString(R.string.text_keilmuan))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            ArrayList<String> dataPT = new ArrayList<String>();
+                            String ilmu = "";
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                String data = snapshot.getValue(String.class);
+                                dataPT.add(data);
+                            }
+
+                            int size = 0;
+                            for (int a = 0; a< dataPT.size(); a++){
+                                size++;
+                                if (size == dataPT.size()){
+                                    ilmu = ilmu + dataPT.get(a);
+                                }
+                                else {
+                                    ilmu = ilmu + dataPT.get(a) + ", ";
+                                }
+                            }
+                            textIsiKualifikasi.setText(ilmu);
+                        } else {
+                            textIsiKualifikasi.setText("Belum ada keilmuan yang dipilih");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Snackbar snackbar = Snackbar
+                                .make(view, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        textIsiKualifikasi.setText("-");
+                    }
+                });
+    }
+
+    private void getTablighMuballigh() {
+        FirebaseDatabase.getInstance()
+                .getReference(userPreference.getKEY_JENIS())
+                .child(getResources().getString(R.string.text_frag_kualifikasi))
+                .child(userPreference.getKEY_PHONE())
+                .child(getResources().getString(R.string.text_tabligh))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            ArrayList<String> dataPT = new ArrayList<String>();
+                            String ilmu = "";
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                String data = snapshot.getValue(String.class);
+                                dataPT.add(data);
+                            }
+
+                            int size = 0;
+                            for (int a = 0; a< dataPT.size(); a++){
+                                size++;
+                                if (size == dataPT.size()){
+                                    ilmu = ilmu + dataPT.get(a);
+                                }
+                                else {
+                                    ilmu = ilmu + dataPT.get(a) + ", ";
+                                }
+                            }
+                            textIsiKesediaan.setText(ilmu);
+                        } else {
+                            textIsiKesediaan.setText("Belum ada kesediaan yang dipilih");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Snackbar snackbar = Snackbar
+                                .make(view, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        textIsiKesediaan.setText("-");
+                    }
+                });
     }
 
     private void getBioMuballigh() {

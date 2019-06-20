@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.exomatik.balligh.balligh.R;
@@ -17,16 +17,18 @@ import java.util.ArrayList;
 
 public class AdapterGridKualifikasi extends BaseAdapter {
     private Context context;
-    private ArrayList<String> dataWarna;
+    private ArrayList<String> data;
+    private ArrayList<String> tersimpan;
 
-    public AdapterGridKualifikasi(Context context, ArrayList<String> dataWarna) {
+    public AdapterGridKualifikasi(Context context, ArrayList<String> data, ArrayList<String> tersimpan) {
         this.context = context;
-        this.dataWarna = dataWarna;
+        this.data = data;
+        this.tersimpan = tersimpan;
     }
 
     @Override
     public int getCount() {
-        return dataWarna.size();
+        return data.size();
     }
 
     @Override
@@ -44,8 +46,27 @@ public class AdapterGridKualifikasi extends BaseAdapter {
         View v = View.inflate(context, R.layout.grid_kualifikasi, null);
 
         TextView text = (TextView) v.findViewById(R.id.text_warna);
+        LinearLayout lnBackground = (LinearLayout) v.findViewById(R.id.ln_grid);
 
-        text.setText(dataWarna.get(position));
+        boolean cek_kualifikasi = false;
+
+        if (tersimpan != null){
+            for (int a = 0; a < tersimpan.size(); a++){
+                if (data.get(position).equals(tersimpan.get(a))){
+                    cek_kualifikasi = true;
+                }
+            }
+
+
+            if (cek_kualifikasi){
+                lnBackground.setBackground(v.getResources().getDrawable(R.drawable.border_blue_dark));
+            }
+            else {
+                lnBackground.setBackground(v.getResources().getDrawable(R.drawable.border_gray));
+            }
+        }
+
+        text.setText(data.get(position));
 
         return v;
     }

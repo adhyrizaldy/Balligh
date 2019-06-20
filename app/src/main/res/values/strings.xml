@@ -47,6 +47,8 @@
 
     <string name="text_pick_kualifikasi">Pilih Kualifikasi Keilmuan</string>
     <string name="text_pick_tabligh">Pilih Kesediaan Tabligh</string>
+    <string name="text_keilmuan">Keilmuan</string>
+    <string name="text_tabligh">Tabligh</string>
 
     <string name="text_jadwal1">STATUS JADWAL 2019</string>
 
