@@ -2,6 +2,7 @@ package com.exomatik.balligh.balligh.Activity.Muballigh;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.exomatik.balligh.balligh.Activity.ActSplashScreen;
 import com.exomatik.balligh.balligh.Activity.Authentication.ActWelcome;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelBiodataMuballigh;
+import com.exomatik.balligh.balligh.Model.ModelPendidikan;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,14 +23,17 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ActProfilMuballigh extends AppCompatActivity {
     private ImageView btnBack, btnEdit;
-    private TextView textHeader, textNama, textGelar, textAlamat, textIsiKualifikasi
-            , textIsiKesediaan, textJumlahKutbah, textJumlahCeramah;
+    private TextView textHeader, textNama, textGelar, textAlamat, textIsiKualifikasi, textIsiKesediaan, textJumlahKutbah, textJumlahCeramah;
     private CircleImageView imgUser;
     private UserPreference userPreference;
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class ActProfilMuballigh extends AppCompatActivity {
         textIsiKesediaan = (TextView) findViewById(R.id.text_isi_kesediaan);
         textJumlahKutbah = (TextView) findViewById(R.id.text_jumlah_khutbah);
         textJumlahCeramah = (TextView) findViewById(R.id.text_jumlah_ceramah);
+        view = (View) findViewById(android.R.id.content);
 
         userPreference = new UserPreference(this);
 
@@ -69,17 +75,18 @@ public class ActProfilMuballigh extends AppCompatActivity {
     }
 
     private void setData() {
-        if (userPreference.getKEY_FOTO() != null){
+        if (userPreference.getKEY_FOTO() != null) {
             Uri localUri = Uri.parse(userPreference.getKEY_FOTO());
             Picasso.with(this).load(localUri).into(imgUser);
-        }else {
+        } else {
             imgUser.setImageResource(R.drawable.logo_balligh);
         }
         textNama.setText(userPreference.getKEY_NAME());
         getBioMuballigh();
+        getPendMuballigh();
     }
 
-    private void getBioMuballigh(){
+    private void getBioMuballigh() {
         Query query = FirebaseDatabase.getInstance()
                 .getReference(userPreference.getKEY_JENIS())
                 .child(getResources().getString(R.string.text_frag_biodata))
@@ -88,20 +95,56 @@ public class ActProfilMuballigh extends AppCompatActivity {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         ModelBiodataMuballigh dataKelas = snapshot.getValue(ModelBiodataMuballigh.class);
 
                         textAlamat.setText(dataKelas.getAlamat());
                     }
+                } else {
+                    textAlamat.setText("-");
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Snackbar snackbar = Snackbar
+                        .make(view, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Snackbar.LENGTH_LONG);
+                snackbar.show();
+                textAlamat.setText("-");
             }
         });
+    }
+
+    private void getPendMuballigh() {
+        FirebaseDatabase.getInstance()
+                .getReference(userPreference.getKEY_JENIS())
+                .child(getResources().getString(R.string.text_frag_pendidikan))
+                .child(userPreference.getKEY_PHONE())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            ArrayList<ModelPendidikan> dataPT = new ArrayList<ModelPendidikan>();
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                ModelPendidikan data = snapshot.getValue(ModelPendidikan.class);
+                                dataPT.add(data);
+                            }
+                            textGelar.setText("(" + dataPT.get(0).getGelar()
+                                    + dataPT.get(1).getGelar() + dataPT.get(2).getGelar() + ")");
+                        } else {
+                            textGelar.setText("Belum ada gelar pendidikan");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Snackbar snackbar = Snackbar
+                                .make(view, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        textGelar.setText("-");
+                    }
+                });
     }
 
     @Override

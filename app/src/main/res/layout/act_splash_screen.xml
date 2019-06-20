@@ -33,7 +33,6 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/img_logo"
         android:layout_marginTop="@dimen/margin_big"
-        android:text="Email"
         android:textColor="@color/putihAsli"
         android:textSize="@dimen/text_standard_et"
         android:fontFamily="@font/roboto_regular"

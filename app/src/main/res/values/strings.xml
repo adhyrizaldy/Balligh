@@ -51,7 +51,7 @@
     <string name="text_ceramah_tarwih">Ceramah Tarwih</string>
     <string name="text_jumlah_tarwih">29</string>
     <string name="text_jumlah_khutbah">52</string>
-    <string name="text_verifikasi">Silahkan verifikasi email </string>
+    <string name="text_verifikasi">Silahkan verifikasi email anda dan klik link yang ada</string>
 
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>

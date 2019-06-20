@@ -55,6 +55,7 @@
                 android:scaleType="fitXY"
                 />
             <EditText
+                android:fontFamily="@font/roboto_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_edit_1"
@@ -110,6 +111,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_kota_pt"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
         <RelativeLayout
@@ -152,6 +154,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_tahun_pt"
                 android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -183,6 +186,7 @@
                 android:scaleType="fitXY"
                 />
             <EditText
+                android:fontFamily="@font/roboto_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_edit_4"
@@ -238,6 +242,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_gelar_pt_s1"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -301,6 +306,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_nama_pt_s2"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -344,6 +350,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_kota_pt_s2"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
         <RelativeLayout
@@ -386,6 +393,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_tahun_pt_s2"
                 android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -429,6 +437,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_jurusan_pt_s2"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -472,6 +481,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_gelar_pt_s2"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -535,6 +545,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_nama_pt_s3"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -578,6 +589,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_kota_pt_s3"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
         <RelativeLayout
@@ -620,6 +632,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_tahun_pt_s3"
                 android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -663,6 +676,7 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:id="@+id/et_jurusan_pt_s3"
                 android:digits="@string/digit_nama"
+                android:fontFamily="@font/roboto_regular"
                 />
         </RelativeLayout>
 
@@ -694,6 +708,7 @@
                 android:scaleType="fitXY"
                 />
             <EditText
+                android:fontFamily="@font/roboto_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_edit_15"
