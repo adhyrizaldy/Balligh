@@ -9,7 +9,9 @@
         android:id="@+id/rl_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/mb_header_big">
+        android:background="@drawable/mb_header_big"
+        android:elevation="@dimen/margin_small"
+        >
 
         <ImageView
             android:layout_width="@dimen/width90"
@@ -40,7 +42,9 @@
         android:background="@drawable/mb_footer_big"
         android:paddingBottom="@dimen/margin_standard"
         android:paddingLeft="@dimen/width30"
-        android:paddingRight="@dimen/width30">
+        android:paddingRight="@dimen/width30"
+        android:elevation="@dimen/margin_small"
+        >
 
         <TextView
             android:id="@+id/text_jadwal"

@@ -1,16 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellowGelap1"
-    >
+    android:background="@color/putihAsli">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kualifikasi"
-        android:textColor="@color/hitamAsli"
-        />
+        android:background="@drawable/mb_header_small"
+        android:elevation="@dimen/margin_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_pick_kualifikasi"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid_kualifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin_standard"
+        android:horizontalSpacing="@dimen/margin_small"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/margin_standard">
+
+    </GridView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_below="@+id/grid_kualifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mb_header_small"
+        android:elevation="@dimen/margin_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_pick_tabligh"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid_tabligh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_bottom"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin_standard"
+        android:horizontalSpacing="@dimen/margin_small"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/margin_standard">
+
+    </GridView>
+
+    <RelativeLayout
+        android:id="@+id/rl_update"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/grid_tabligh"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:background="@color/orange">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/img_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_update" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_standard"
+                android:layout_toRightOf="@+id/img_update"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/btn_update"
+                android:textAllCaps="true"
+                android:textColor="@color/putihAsli"
+                android:textSize="@dimen/text_standard_big" />
+        </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -45,6 +45,9 @@
     <string name="text_pendidikan2">Pendidikan  S2</string>
     <string name="text_pendidikan3">Pendidikan  S3</string>
 
+    <string name="text_pick_kualifikasi">Pilih Kualifikasi Keilmuan</string>
+    <string name="text_pick_tabligh">Pilih Kesediaan Tabligh</string>
+
     <string name="text_jadwal1">STATUS JADWAL 2019</string>
 
     <string name="text_kutbah_jumat">Khutbah Jumat</string>
@@ -53,6 +56,8 @@
     <string name="text_jumlah_khutbah">52</string>
     <string name="text_verifikasi">Silahkan verifikasi email anda dan klik link yang ada</string>
 
+    <string name="text_maintenance">Mohon Maaf, aplikasi sedang maintenance</string>
+    <string name="text_all_right_reserved">Balligh | All Right Reserved 2019</string>
     <string name="text_landing_welcome">Selamat Datang</string>
     <string name="text_jenis_akun">Piih jenis akun yang akan dibuat</string>
     <string name="text_sudah_punya_akun">Sudah punya akun?</string>

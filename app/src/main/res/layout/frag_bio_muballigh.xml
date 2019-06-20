@@ -282,6 +282,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/mb_header_small"
             android:layout_below="@+id/rl_et_tanggal_lahir"
+            android:elevation="@dimen/margin_small"
             android:id="@+id/rl_header_alamat"
             android:layout_marginTop="@dimen/margin_standard"
             >
@@ -417,6 +418,7 @@
                 app:civ_fill_color="@color/orange"
                 app:civ_border_color="@color/orange"
                 android:id="@+id/img_pick_alamat"
+                android:elevation="@dimen/margin_small"
                 />
             <EditText
                 android:layout_width="match_parent"

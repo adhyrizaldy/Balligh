@@ -50,7 +50,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/width220"
         android:layout_below="@+id/customToolbar"
-        android:background="@drawable/mb_header_big">
+        android:background="@drawable/mb_header_big"
+        android:elevation="@dimen/margin_small"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_user"
@@ -160,6 +162,7 @@
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/rl_center"
         android:background="@drawable/mb_footer_big"
+        android:elevation="@dimen/margin_small"
         android:paddingTop="@dimen/width30"
         android:paddingBottom="@dimen/margin_standard"
         android:paddingLeft="@dimen/width30"

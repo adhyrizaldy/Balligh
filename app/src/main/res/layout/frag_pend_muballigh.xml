@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/mb_header_small"
+            android:elevation="@dimen/margin_small"
             android:id="@+id/rl_pend_s1"
             >
             <TextView
@@ -251,6 +252,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/mb_header_small"
             android:id="@+id/rl_pend_s2"
+            android:elevation="@dimen/margin_small"
             android:layout_below="@+id/rl_et_gelar_s1"
             android:layout_marginTop="@dimen/margin_big"
             >
@@ -490,6 +492,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/mb_header_small"
             android:id="@+id/rl_pend_s3"
+            android:elevation="@dimen/margin_small"
             android:layout_below="@+id/rl_et_gelar_s2"
             android:layout_marginTop="@dimen/margin_big"
             >

@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_maintenance"
-        android:text="Mohon Maaf, aplikasi sedang maintenance"
+        android:text="@string/text_maintenance"
         android:textColor="@color/putihAsli"
         android:textSize="@dimen/text_standard"
         android:layout_centerHorizontal="true"
@@ -43,7 +43,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Balligh | All Right Reserved 2019"
+        android:text="@string/text_all_right_reserved"
         android:textColor="@color/putihAsli"
         android:textSize="@dimen/text_standard"
         android:fontFamily="@font/roboto_regular"
