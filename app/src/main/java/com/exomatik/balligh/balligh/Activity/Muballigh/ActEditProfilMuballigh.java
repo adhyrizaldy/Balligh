@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.exomatik.balligh.balligh.Adapter.ViewPagerAdapter;
-import com.exomatik.balligh.balligh.Fragment.fragAfiliasiMuballigh;
-import com.exomatik.balligh.balligh.Fragment.fragBioMuballigh;
-import com.exomatik.balligh.balligh.Fragment.fragKualifikasiMuballigh;
-import com.exomatik.balligh.balligh.Fragment.fragPendMuballigh;
+import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.fragAfiliasiMuballigh;
+import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.fragBioMuballigh;
+import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.fragKualifikasiMuballigh;
+import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.fragPendMuballigh;
 import com.exomatik.balligh.balligh.R;
 
 public class ActEditProfilMuballigh extends AppCompatActivity {
@@ -47,6 +47,7 @@ public class ActEditProfilMuballigh extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fragBioMuballigh.nama = "";
                 startActivity(new Intent(ActEditProfilMuballigh.this, ActProfilMuballigh.class));
                 finish();
             }
@@ -55,6 +56,7 @@ public class ActEditProfilMuballigh extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        fragBioMuballigh.nama = "";
         startActivity(new Intent(ActEditProfilMuballigh.this, ActProfilMuballigh.class));
         finish();
     }

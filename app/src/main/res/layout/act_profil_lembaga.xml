@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_orange"
+    tools:context="com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh">
+    <RelativeLayout
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ld_header_big"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/rl_toolbar"
+            >
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_standard_big"
+                android:src="@drawable/icon_back" />
+
+            <TextView
+                android:id="@+id/text_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25.0dip"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_vertical"
+                android:text="@string/text_profil_lembaga"
+                android:textAlignment="center"
+                android:textColor="@color/putihAsli"
+                android:textSize="@dimen/text_big"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_standard_big"
+                android:src="@drawable/icon_edit_white" />
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/width150"
+            android:layout_height="@dimen/width150"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/width30"
+            app:civ_border_color="@color/putihAsli"
+            android:src="@drawable/logo_balligh"
+            app:civ_border_width="@dimen/margin_very_small"
+            android:layout_below="@+id/rl_toolbar"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width240"
+        android:layout_below="@+id/customToolbar"
+        android:layout_marginTop="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/text_nama_lembaga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_regular"
+            android:textAllCaps="true"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_big"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/text_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_nama_lembaga"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_pengurus"
+            android:layout_width="@dimen/width100"
+            android:layout_height="@dimen/width100"
+            android:layout_marginTop="@dimen/width40"
+            android:layout_marginLeft="@dimen/width40"
+            android:layout_below="@+id/text_alamat"
+            app:civ_border_color="@color/putihAsli"
+            android:src="@drawable/logo_balligh"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_pengurus"
+            android:text="@string/text_pengurus"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_big"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_alamat"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_nama"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_pengurus"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_gelar"
+            android:textColor="@color/putihGelap4"
+            android:textSize="@dimen/text_small"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_nama"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width220"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rl_center"
+        android:background="@drawable/ld_footer_big"
+        android:elevation="@dimen/margin_small"
+        android:paddingTop="@dimen/width30"
+        android:paddingBottom="@dimen/margin_standard"
+        android:paddingLeft="@dimen/width30"
+        android:paddingRight="@dimen/width30">
+
+        <TextView
+            android:id="@+id/text_jadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/width80"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_jadwal1"
+            android:textColor="@color/putihGelap3"
+            android:textSize="@dimen/text_standard_et"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_garis"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_very_small"
+            android:layout_below="@+id/text_jadwal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/hitamAsli"
+            android:src="@color/putihAsli" />
+
+        <TextView
+            android:id="@+id/text_khutbah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_garis"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Kutbah Jumat : "
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seek_bar1"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/text_khutbah"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@+id/text_jumlah_khutbah"
+            app:bsb_hide_bubble="true"
+            app:bsb_second_track_color="@color/putihHijau"
+            app:bsb_touch_to_seek="true"
+            app:bsb_track_color="@color/putihHijauGelap2" />
+
+        <TextView
+            android:id="@+id/text_jumlah_khutbah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_khutbah"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_jumlah_khutbah"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard" />
+
+        <TextView
+            android:id="@+id/text_ceramah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_bar1"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Ceramah Tarwih : "
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard_et" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seek_bar2"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/text_ceramah"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@+id/text_jumlah_ceramah"
+            app:bsb_hide_bubble="true"
+            app:bsb_second_track_color="@color/putihHijau"
+            app:bsb_touch_to_seek="true"
+            app:bsb_track_color="@color/putihHijauGelap2" />
+
+        <TextView
+            android:id="@+id/text_jumlah_ceramah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_ceramah"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_jumlah_tarwih"
+            android:textColor="@color/putihAsli"
+            android:textSize="@dimen/text_standard" />
+    </RelativeLayout>
+</RelativeLayout>

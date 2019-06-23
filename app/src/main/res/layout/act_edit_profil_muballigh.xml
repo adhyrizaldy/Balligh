@@ -10,7 +10,7 @@
         android:id="@+id/customToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/bg_header_blue">
+        android:background="@drawable/blue_toolbar">
 
         <ImageView
             android:id="@+id/img_back"
@@ -44,7 +44,7 @@
         android:layout_height="55dp"
         android:background="@drawable/border_tab_edit_muballigh"
         android:backgroundTint="@color/biruGelap1"
-        android:elevation="20dp"
+        android:elevation="@dimen/margin_big"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/putihAsli"
         app:tabMode="fixed">

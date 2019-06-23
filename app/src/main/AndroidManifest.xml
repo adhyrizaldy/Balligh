@@ -27,7 +27,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity
-            android:name=".Activity.ActMainActivity"
+            android:name=".Activity.Muballigh.ActMainMuballigh"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.LembagaDakwah.ActMainLembaga"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.Authentication.ActSignIn"
@@ -38,10 +41,21 @@
         <activity
             android:name=".Activity.Authentication.ActLanding"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.Authentication.ActResetPassword" />
-        <activity android:name=".Activity.Authentication.ActWelcome" />
-        <activity android:name=".Activity.Muballigh.ActProfilMuballigh" />
-        <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh" />
+        <activity android:name=".Activity.Authentication.ActResetPassword"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.Authentication.ActWelcome"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.Muballigh.ActProfilMuballigh"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.LembagaDakwah.ActProfilLembaga"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

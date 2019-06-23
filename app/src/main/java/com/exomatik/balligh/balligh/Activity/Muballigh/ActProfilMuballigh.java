@@ -5,12 +5,11 @@ import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.exomatik.balligh.balligh.Activity.ActMainActivity;
+import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.fragBioMuballigh;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.Model.ModelBiodataMuballigh;
 import com.exomatik.balligh.balligh.Model.ModelPendidikan;
@@ -58,7 +57,7 @@ public class ActProfilMuballigh extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActProfilMuballigh.this, ActMainActivity.class));
+                startActivity(new Intent(ActProfilMuballigh.this, ActMainMuballigh.class));
                 finish();
             }
         });
@@ -79,7 +78,7 @@ public class ActProfilMuballigh extends AppCompatActivity {
         } else {
             imgUser.setImageResource(R.drawable.logo_balligh);
         }
-        textNama.setText(userPreference.getKEY_NAME());
+
         getBioMuballigh();
         getPendMuballigh();
         getKeilmuanMuballigh();
@@ -185,9 +184,13 @@ public class ActProfilMuballigh extends AppCompatActivity {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         ModelBiodataMuballigh dataKelas = snapshot.getValue(ModelBiodataMuballigh.class);
 
+                        textNama.setText(dataKelas.getNama());
+                        fragBioMuballigh.nama = textNama.getText().toString();
                         textAlamat.setText(dataKelas.getAlamat());
                     }
                 } else {
+                    textNama.setText(userPreference.getKEY_NAME());
+                    fragBioMuballigh.nama = userPreference.getKEY_NAME();
                     textAlamat.setText("-");
                 }
             }
@@ -235,7 +238,7 @@ public class ActProfilMuballigh extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ActProfilMuballigh.this, ActMainActivity.class));
+        startActivity(new Intent(ActProfilMuballigh.this, ActMainMuballigh.class));
         finish();
     }
 }

@@ -49,13 +49,14 @@
     <string name="text_pick_tabligh">Pilih Kesediaan Tabligh</string>
     <string name="text_keilmuan">Keilmuan</string>
     <string name="text_tabligh">Tabligh</string>
-
     <string name="text_jadwal1">STATUS JADWAL 2019</string>
-
     <string name="text_kutbah_jumat">Khutbah Jumat</string>
     <string name="text_ceramah_tarwih">Ceramah Tarwih</string>
+    <string name="text_pengurus">Pengurus</string>
+
     <string name="text_jumlah_tarwih">29</string>
     <string name="text_jumlah_khutbah">52</string>
+
     <string name="text_verifikasi">Silahkan verifikasi email anda dan klik link yang ada</string>
 
     <string name="text_maintenance">Mohon Maaf, aplikasi sedang maintenance</string>
@@ -70,11 +71,16 @@
     <string name="text_reset_pass">Recover Password</string>
     <string name="text_reset_password">Silahkan Masukkan Nomor HP anda dan kami akan mengirimkan kode recovery</string>
     <string name="text_profil_muballigh">Profil Muballigh</string>
+    <string name="text_profil_lembaga">Profil Lembaga Dakwah</string>
+    <string name="text_profil_pengurus">Profil Masjid</string>
 
     <string name="text_frag_biodata">Biodata</string>
     <string name="text_frag_pendidikan">Pendidikan</string>
     <string name="text_frag_afiliasi">Afiliasi Lembaga</string>
     <string name="text_frag_kualifikasi">Kualifikasi</string>
+
+    <string name="text_kualifikasi_ilmu">Kualifikasi Keilmuan</string>
+    <string name="text_kualifikasi_tabligh">Kesediaan Tabligh</string>
 
     <string name="error_data_kosong">Data tidak boleh kosong!</string>
     <string name="error_pass_not_same">Password tidak sesuai!</string>

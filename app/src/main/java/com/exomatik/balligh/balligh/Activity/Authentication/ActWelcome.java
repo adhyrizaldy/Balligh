@@ -6,8 +6,10 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.exomatik.balligh.balligh.Activity.ActMainActivity;
+import com.exomatik.balligh.balligh.Activity.LembagaDakwah.ActMainLembaga;
+import com.exomatik.balligh.balligh.Activity.Muballigh.ActMainMuballigh;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.R;
 import com.squareup.picasso.Picasso;
@@ -41,29 +43,38 @@ public class ActWelcome extends AppCompatActivity {
 
         switch (userPreference.getKEY_JENIS()) {
             case "Muballigh":
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        Intent homeIntent = new Intent(ActWelcome.this, ActMainMuballigh.class);
+                        startActivity(homeIntent);
+                        finish();
+                    }
+                }, 3000L);
                 textUser.setText("Ahlan Wa Sahlan Ustadz \n " + userPreference.getKEY_NAME());
                 break;
             case "Admin":
+                Toast.makeText(this, "Layanan Belum tersedia", Toast.LENGTH_SHORT).show();
                 textUser.setText("Ahlan Wa Sahlan Admin \n " + userPreference.getKEY_NAME());
                 break;
             case "Lembaga Dakwah":
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        Intent homeIntent = new Intent(ActWelcome.this, ActMainLembaga.class);
+                        startActivity(homeIntent);
+                        finish();
+                    }
+                }, 3000L);
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
             case "Pengurus Masjid":
+                Toast.makeText(this, "Layanan Belum tersedia", Toast.LENGTH_SHORT).show();
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
             case "Masyarakat":
+                Toast.makeText(this, "Layanan Belum tersedia", Toast.LENGTH_SHORT).show();
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
         }
-
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                Intent homeIntent = new Intent(ActWelcome.this, ActMainActivity.class);
-                startActivity(homeIntent);
-                finish();
-            }
-        }, 3000L);
     }
 
     @Override
