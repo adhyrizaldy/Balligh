@@ -14,7 +14,7 @@
         android:id="@+id/nav_grup2"
         android:visible="true">
         <item
-            n1:id="@+id/nav_kelas_mahasiswa"
+            n1:id="@+id/nav_jadwal"
             android:icon="@drawable/icon_jadwal_white"
             n1:title="Jadwal Saya" />
     </group>
@@ -22,7 +22,7 @@
         android:id="@+id/nav_grup3"
         android:visible="true">
         <item
-            n1:id="@+id/nav_quiz"
+            n1:id="@+id/nav_kontak"
             android:icon="@drawable/icon_contact_white"
             n1:title="Kontak" />
     </group>
@@ -31,7 +31,7 @@
         android:visible="true"
         >
         <item
-            n1:id="@+id/nav_profile"
+            n1:id="@+id/nav_pesan"
             android:icon="@drawable/icon_pesan_white"
             n1:title="Pesan" />
     </group>

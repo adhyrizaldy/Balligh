@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.LembagaDakwah.ActMainLembaga;
 import com.exomatik.balligh.balligh.Activity.Muballigh.ActMainMuballigh;
+import com.exomatik.balligh.balligh.Activity.PengurusMasjid.ActMainMasjid;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
 import com.exomatik.balligh.balligh.R;
 import com.squareup.picasso.Picasso;
@@ -67,7 +68,13 @@ public class ActWelcome extends AppCompatActivity {
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
             case "Pengurus Masjid":
-                Toast.makeText(this, "Layanan Belum tersedia", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        Intent homeIntent = new Intent(ActWelcome.this, ActMainMasjid.class);
+                        startActivity(homeIntent);
+                        finish();
+                    }
+                }, 3000L);
                 textUser.setText("Ahlan Wa Sahlan \n " + userPreference.getKEY_NAME());
                 break;
             case "Masyarakat":

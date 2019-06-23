@@ -167,7 +167,15 @@ public class ActSplashScreen extends AppCompatActivity {
                             userPreference.setKEY_PHONE(localDataUser.getNoHp());
                             userPreference.setKEY_UID(localDataUser.getUid());
                             userPreference.setKEY_JENIS(localDataUser.getJenisAkun());
-                            getBioUser(localDataUser.getJenisAkun(), localDataUser.getNoHp());
+                            if (localDataUser.getJenisAkun().equals(getResources().getString(R.string.jenis_akun_3))){
+                                getBioUser(localDataUser.getJenisAkun(), localDataUser.getNoHp());
+                            }
+                            else if (localDataUser.getJenisAkun().equals(getResources().getString(R.string.jenis_akun_1))){
+                                getBioUser(localDataUser.getJenisAkun(), localDataUser.getNoHp());
+                            }
+                            else if (localDataUser.getJenisAkun().equals(getResources().getString(R.string.jenis_akun_2))){
+                                getBioUser(localDataUser.getJenisAkun(), localDataUser.getNoHp());
+                            }
                         }
                     }
                 }

@@ -33,6 +33,9 @@
             android:name=".Activity.LembagaDakwah.ActMainLembaga"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Activity.PengurusMasjid.ActMainMasjid"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.Authentication.ActSignIn"
             android:screenOrientation="portrait" />
         <activity
@@ -53,10 +56,17 @@
         <activity android:name=".Activity.LembagaDakwah.ActEditProfilLembaga"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".Activity.PengurusMasjid.ActEditProfilMasjid"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".Activity.Muballigh.ActProfilMuballigh"
             android:screenOrientation="portrait"
             />
         <activity android:name=".Activity.LembagaDakwah.ActProfilLembaga"
+            android:screenOrientation="portrait"
+            />
+        />
+        <activity android:name=".Activity.PengurusMasjid.ActProfilMasjid"
             android:screenOrientation="portrait"
             />
     </application>

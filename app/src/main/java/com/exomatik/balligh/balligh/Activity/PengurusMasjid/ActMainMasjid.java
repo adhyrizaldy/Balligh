@@ -1,4 +1,4 @@
-package com.exomatik.balligh.balligh.Activity.LembagaDakwah;
+package com.exomatik.balligh.balligh.Activity.PengurusMasjid;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,10 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exomatik.balligh.balligh.Activity.ActSplashScreen;
-import com.exomatik.balligh.balligh.Activity.LembagaDakwah.Fragment.ContentMainLembaga;
-import com.exomatik.balligh.balligh.Activity.PengurusMasjid.ActMainMasjid;
+import com.exomatik.balligh.balligh.Activity.LembagaDakwah.ActProfilLembaga;
+import com.exomatik.balligh.balligh.Activity.PengurusMasjid.Fragment.ContentMainMasjid;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
-import com.exomatik.balligh.balligh.Activity.Muballigh.Fragment.ContentMainMuballigh;
 import com.exomatik.balligh.balligh.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +31,7 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ActMainLembaga extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ActMainMasjid extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private UserPreference userPreference;
     private ProgressDialog progressDialog;
     private CircleImageView imgUser;
@@ -42,7 +41,7 @@ public class ActMainLembaga extends AppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_main_lembaga);
+        setContentView(R.layout.act_main_masjid);
 
         userPreference = new UserPreference(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_top);
@@ -72,7 +71,7 @@ public class ActMainLembaga extends AppCompatActivity implements NavigationView.
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container
-                    , new ContentMainLembaga()).commit();
+                    , new ContentMainMasjid()).commit();
     }
 
     @Override
@@ -92,7 +91,7 @@ public class ActMainLembaga extends AppCompatActivity implements NavigationView.
         int id = item.getItemId();
 
         if (id == R.id.nav_profil) {
-            startActivity(new Intent(ActMainLembaga.this, ActProfilLembaga.class));
+            startActivity(new Intent(ActMainMasjid.this, ActProfilMasjid.class));
             finish();
         }
         else if (id == R.id.nav_jadwal){
@@ -108,14 +107,14 @@ public class ActMainLembaga extends AppCompatActivity implements NavigationView.
             cekProfil();
         }
         else if (id == R.id.nav_sign_out) {
-            progressDialog = new ProgressDialog(ActMainLembaga.this);
+            progressDialog = new ProgressDialog(ActMainMasjid.this);
             progressDialog.setMessage(getResources().getString(R.string.progress_title1));
             progressDialog.setTitle(getResources().getString(R.string.progress_text1));
             progressDialog.setCancelable(false);
             progressDialog.show();
             FirebaseAuth.getInstance().signOut();
             hapusUser();
-            startActivity(new Intent(ActMainLembaga.this, ActSplashScreen.class));
+            startActivity(new Intent(ActMainMasjid.this, ActSplashScreen.class));
             progressDialog.dismiss();
             finish();
         }
@@ -135,7 +134,7 @@ public class ActMainLembaga extends AppCompatActivity implements NavigationView.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    Toast.makeText(ActMainLembaga.this, "Berhasil Masuk", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActMainMasjid.this, "Berhasil Masuk", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Snackbar snackbar = Snackbar

@@ -30,7 +30,7 @@
 
     <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/text_standard_et</item>
-        <item name="android:textColor">@color/putihGelap2</item>
+        <item name="android:textColor">@color/putihGelap1</item>
         <item name="android:textStyle">normal</item>
         <item name="textAllCaps">true</item>
         <item name="android:fontFamily">@font/roboto_regular</item>

@@ -1,11 +1,10 @@
-package com.exomatik.balligh.balligh.Activity.LembagaDakwah.Fragment;
+package com.exomatik.balligh.balligh.Activity.PengurusMasjid.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -20,30 +19,21 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh;
 import com.exomatik.balligh.balligh.Data.DataLokasi;
 import com.exomatik.balligh.balligh.Featured.UserPreference;
-import com.exomatik.balligh.balligh.Model.ModelBiodataMuballigh;
 import com.exomatik.balligh.balligh.Model.ModelUser;
 import com.exomatik.balligh.balligh.R;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -51,13 +41,12 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.Activity.RESULT_OK;
-import static com.google.firebase.storage.FirebaseStorage.getInstance;
 
 /**
  * Created by IrfanRZ on 21/09/2018.
  */
 
-public class fragProfilLembaga extends Fragment {
+public class fragProfilMasjid extends Fragment {
     public static String namaPengurus, fotoPengurus, namaLembaga;
     private View view, v;
     private CircleImageView btnFoto, btnAlamat, btnFotoPengurus;
@@ -77,7 +66,7 @@ public class fragProfilLembaga extends Fragment {
     private boolean cekSpinner = false;
     private int requestFoto = 0;
 
-    public fragProfilLembaga() {
+    public fragProfilMasjid() {
     }
 
     @Nullable

@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_orange"
-    tools:context="com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh">
-
+    >
     <RelativeLayout
-        android:id="@+id/rl_header"
+        android:id="@+id/customToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/mb_header_big">
+        android:background="@drawable/mj_header_big"
+        >
 
         <RelativeLayout
-            android:id="@+id/customToolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
-
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/rl_toolbar"
+            >
             <ImageView
                 android:id="@+id/img_back"
                 android:layout_width="wrap_content"
@@ -29,13 +29,13 @@
             <TextView
                 android:id="@+id/text_header"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="25.0dip"
                 android:fontFamily="@font/roboto_regular"
                 android:gravity="center_vertical"
-                android:text="@string/text_profil_muballigh"
+                android:text="@string/text_profil_pengurus"
                 android:textAlignment="center"
                 android:textColor="@color/putihAsli"
                 android:textSize="@dimen/text_big"
@@ -51,28 +51,29 @@
                 android:src="@drawable/icon_edit_white" />
         </RelativeLayout>
 
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_user"
             android:layout_width="@dimen/width150"
             android:layout_height="@dimen/width150"
-            android:layout_below="@+id/customToolbar"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/width30"
             app:civ_border_color="@color/putihAsli"
-            app:civ_border_width="@dimen/margin_very_small" />
+            android:src="@drawable/logo_balligh"
+            app:civ_border_width="@dimen/margin_very_small"
+            android:layout_below="@+id/rl_toolbar"
+            />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rl_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_header"
+        android:layout_below="@+id/customToolbar"
         android:layout_above="@+id/rl_bottom"
         android:layout_marginTop="@dimen/margin_small">
 
         <TextView
-            android:id="@+id/text_nama"
+            android:id="@+id/text_nama_lembaga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -80,79 +81,68 @@
             android:textAllCaps="true"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_standard_big"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text_gelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_nama"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/putihGelap4"
-            android:textSize="@dimen/text_small" />
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/text_alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_gelar"
+            android:layout_below="@+id/text_nama_lembaga"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_small"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text_kualifikasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_pengurus"
+            android:layout_width="@dimen/width100"
+            android:layout_height="@dimen/width100"
+            android:layout_marginTop="@dimen/width40"
+            android:layout_marginLeft="@dimen/width40"
             android:layout_below="@+id/text_alamat"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin_big"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/text_kualifikasi_ilmu"
-            android:textAllCaps="true"
-            android:textColor="@color/putihGelap4"
-            android:textSize="@dimen/text_standard_et"
-            android:textStyle="bold" />
-
+            app:civ_border_color="@color/putihAsli"
+            android:src="@drawable/logo_balligh"
+            />
         <TextView
-            android:id="@+id/text_isi_kualifikasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_kualifikasi"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto_regular"
-            android:maxLines="3"
-            android:textAlignment="center"
+            android:id="@+id/text_pengurus"
+            android:text="@string/text_pengurus"
             android:textColor="@color/putihAsli"
-            android:textSize="@dimen/text_small" />
-
+            android:textSize="@dimen/text_standard_big"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_alamat"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
         <TextView
-            android:id="@+id/text_kesediaan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_isi_kualifikasi"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/text_kualifikasi_tabligh"
-            android:textAllCaps="true"
-            android:textColor="@color/putihGelap4"
-            android:textSize="@dimen/text_standard_et"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text_isi_kesediaan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_kesediaan"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto_regular"
-            android:maxLines="3"
-            android:textAlignment="center"
+            android:id="@+id/text_nama"
             android:textColor="@color/putihAsli"
-            android:textSize="@dimen/text_small" />
+            android:textSize="@dimen/text_standard_et"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_pengurus"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_gelar"
+            android:textColor="@color/putihGelap4"
+            android:textSize="@dimen/text_small"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_below="@+id/text_nama"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_toRightOf="@+id/img_pengurus"
+            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -160,7 +150,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/width220"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/mb_footer_big"
+        android:background="@drawable/mj_footer_big"
         android:elevation="@dimen/margin_small"
         android:paddingBottom="@dimen/margin_standard"
         android:paddingLeft="@dimen/width30"
@@ -173,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/img_garis"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_small"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/text_jadwal1"
             android:textColor="@color/putihGelap1"
@@ -208,9 +198,9 @@
             android:layout_marginBottom="@dimen/margin_small"
             android:layout_toLeftOf="@+id/text_jumlah_khutbah"
             app:bsb_hide_bubble="true"
-            app:bsb_second_track_color="@color/putihBiru"
+            app:bsb_second_track_color="@color/putihHijau2"
             app:bsb_touch_to_seek="true"
-            app:bsb_track_color="@color/putihBiruGelap2" />
+            app:bsb_track_color="@color/putihHijauGelap3" />
 
         <TextView
             android:id="@+id/text_jumlah_khutbah"
@@ -243,9 +233,9 @@
             android:layout_marginBottom="@dimen/margin_small"
             android:layout_toLeftOf="@+id/text_jumlah_ceramah"
             app:bsb_hide_bubble="true"
-            app:bsb_second_track_color="@color/putihBiru"
+            app:bsb_second_track_color="@color/putihHijau2"
             app:bsb_touch_to_seek="true"
-            app:bsb_track_color="@color/putihBiruGelap2" />
+            app:bsb_track_color="@color/putihHijauGelap3" />
 
         <TextView
             android:id="@+id/text_jumlah_ceramah"

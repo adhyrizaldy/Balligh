@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/width150"
-            android:background="@drawable/ld_header_small"
+            android:background="@drawable/mj_header_small"
             android:elevation="@dimen/margin_standard"
             android:id="@+id/rl_header"
             >
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_nama_lembaga"
+                android:text="@string/et_nama_masjid"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
@@ -68,7 +68,7 @@
                 android:layout_below="@+id/text_edit_1"
                 android:layout_above="@+id/img_margin_1"
                 android:background="@android:color/transparent"
-                android:hint="@string/jenis_akun_1"
+                android:hint="@string/et_masjid"
                 android:textColorHint="@color/putihGelap5"
                 android:textColor="@color/hitamAsli"
                 android:textSize="@dimen/text_standard_big"
@@ -247,7 +247,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ld_header_small"
+            android:background="@drawable/mj_header_small"
             android:layout_below="@+id/rl_et_desc"
             android:elevation="@dimen/margin_small"
             android:id="@+id/rl_header_alamat"

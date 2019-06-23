@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_orange"
-    tools:context="com.exomatik.balligh.balligh.Activity.Muballigh.ActProfilMuballigh">
+    >
     <RelativeLayout
         android:id="@+id/customToolbar"
         android:layout_width="match_parent"
@@ -69,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/customToolbar"
+        android:layout_above="@+id/rl_bottom"
         android:layout_marginTop="@dimen/margin_small">
 
         <TextView
@@ -147,8 +148,8 @@
     <RelativeLayout
         android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rl_center"
+        android:layout_height="@dimen/width220"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/ld_footer_big"
         android:elevation="@dimen/margin_small"
         android:paddingBottom="@dimen/margin_standard"

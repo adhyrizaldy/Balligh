@@ -24,8 +24,9 @@
     <RelativeLayout
         android:id="@+id/rl_center"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rl_header"
+        android:layout_above="@id/rl_bottom"
         android:layout_marginTop="@dimen/margin_standard">
 
         <android.support.v7.widget.RecyclerView
@@ -37,13 +38,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rl_center"
+        android:layout_height="@dimen/width220"
+        android:id="@+id/rl_bottom"
         android:background="@drawable/mb_footer_big"
         android:paddingTop="@dimen/width30"
         android:paddingLeft="@dimen/width30"
         android:paddingRight="@dimen/width30"
         android:elevation="@dimen/margin_small"
+        android:layout_alignParentBottom="true"
         >
         <TextView
             android:id="@+id/text_jadwal"

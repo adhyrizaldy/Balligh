@@ -322,7 +322,7 @@ public class fragBioMuballigh extends Fragment {
 
         if (nama.isEmpty() || phone.isEmpty() || tempatLahir.isEmpty() || tanggalLahir.isEmpty() || alamat.isEmpty()
                 || jk == -1 || prov.length() == 1 || kota.length() == 1|| (imageUri == null && userPreference.getKEY_FOTO() == null)
-                || etNomor.length() < 9
+                || phone.length() < 9
                 ) {
             if (nama.isEmpty()) {
                 etNama.setError(getResources().getString(R.string.error_data_kosong));
