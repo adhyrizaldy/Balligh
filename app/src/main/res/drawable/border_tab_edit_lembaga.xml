@@ -5,8 +5,8 @@
         <stroke android:width="@dimen/margin_very_small"
             android:color="@color/putihAsli" />
         <gradient
-        android:startColor="@color/biruGelap1"
-        android:endColor="@color/biruGelap1"
+        android:startColor="@color/putihHijauGelap2"
+        android:endColor="@color/putihHijauGelap2"
         android:angle="90"/>
 
         <padding android:left="@dimen/margin_small"

@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/width150"
-            android:background="@drawable/mb_header_small"
+            android:background="@drawable/ld_header_small"
             android:elevation="@dimen/margin_standard"
             android:id="@+id/rl_header"
             >
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_nama_lengkap"
+                android:text="@string/et_nama_lembaga"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
@@ -68,7 +68,7 @@
                 android:layout_below="@+id/text_edit_1"
                 android:layout_above="@+id/img_margin_1"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_nama_lengkap"
+                android:hint="@string/jenis_akun_1"
                 android:textColorHint="@color/putihGelap5"
                 android:textColor="@color/hitamAsli"
                 android:textSize="@dimen/text_standard_big"
@@ -80,16 +80,16 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/width60"
-            android:layout_marginTop="@dimen/margin_standard"
             android:layout_marginRight="@dimen/width30"
             android:layout_marginLeft="@dimen/width30"
+            android:layout_marginTop="@dimen/margin_standard"
             android:layout_below="@+id/rl_et_nama"
-            android:id="@+id/rl_et_hp"
+            android:id="@+id/rl_et_nama_pengurus"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_nomor_hp"
+                android:text="@string/et_nama_pengurus"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
@@ -120,90 +120,57 @@
                 android:layout_below="@+id/text_edit_2"
                 android:layout_above="@+id/img_margin_2"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_nomor_hp"
+                android:hint="@string/et_pengurus"
                 android:textColorHint="@color/putihGelap5"
                 android:textColor="@color/hitamAsli"
                 android:textSize="@dimen/text_standard_big"
                 android:paddingLeft="@dimen/margin_standard"
-                android:id="@+id/et_nomor"
-                android:inputType="number"
+                android:id="@+id/et_nama_pengurus"
+                android:digits="@string/digit_nama"
                 />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/width60"
+            android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/width30"
             android:layout_marginLeft="@dimen/width30"
             android:layout_marginTop="@dimen/margin_standard"
-            android:layout_below="@+id/rl_et_hp"
-            android:id="@+id/rl_et_jk"
+            android:layout_below="@+id/rl_et_nama_pengurus"
+            android:id="@+id/rl_et_foto"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_jk"
+                android:text="@string/et_foto_pengurus"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
                 android:id="@+id/text_edit_3"
+                android:layout_marginTop="@dimen/margin_big"
                 />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bg_et_margin"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/margin_very_small"
-                android:id="@+id/img_margin_3"
-                android:scaleType="fitXY"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/width100"
+                android:layout_height="@dimen/width100"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/img_pengurus"
                 />
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_edit_3"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginLeft="@dimen/margin_standard"
-                android:layout_marginRight="@dimen/margin_standard"
-                android:orientation="horizontal"
-                android:id="@+id/rg_jk"
-                >
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_jk_laki"
-                    android:textColor="@color/putihGelap3"
-                    android:textSize="@dimen/text_standard_big"
-                    android:fontFamily="@font/roboto_regular"
-                    android:id="@+id/rb_jk1"
-                    />
-
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_jk_perempuan"
-                    android:textColor="@color/putihGelap3"
-                    android:textSize="@dimen/text_standard_big"
-                    android:fontFamily="@font/roboto_regular"
-                    android:id="@+id/rb_jk2"
-                    android:layout_marginLeft="@dimen/margin_standard"
-                    />
-            </RadioGroup>
-
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/width60"
             android:layout_marginTop="@dimen/margin_standard"
             android:layout_marginRight="@dimen/width30"
             android:layout_marginLeft="@dimen/width30"
-            android:layout_below="@+id/rl_et_jk"
-            android:id="@+id/rl_et_tempat_lahir"
+            android:layout_below="@+id/rl_et_foto"
+            android:id="@+id/rl_et_hp"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_tempat_lahir"
+                android:text="@string/et_nomor_hp"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
@@ -224,28 +191,29 @@
                 android:layout_below="@+id/text_edit_4"
                 android:layout_above="@+id/img_margin_4"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_tempat_lahir"
+                android:hint="@string/et_nomor_hp"
                 android:textColorHint="@color/putihGelap5"
                 android:textColor="@color/hitamAsli"
                 android:textSize="@dimen/text_standard_big"
                 android:paddingLeft="@dimen/margin_standard"
-                android:id="@+id/et_tempat_lahir"
-                android:digits="@string/digit_nama"
+                android:id="@+id/et_nomor"
+                android:inputType="number"
                 />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/width60"
             android:layout_marginTop="@dimen/margin_standard"
             android:layout_marginRight="@dimen/width30"
             android:layout_marginLeft="@dimen/width30"
-            android:layout_below="@+id/rl_et_tempat_lahir"
-            android:id="@+id/rl_et_tanggal_lahir"
+            android:layout_below="@+id/rl_et_hp"
+            android:id="@+id/rl_et_desc"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_tanggal_lahir"
+                android:text="@string/et_desc_lembaga"
                 android:textColor="@color/putihGelap3"
                 android:textSize="@dimen/text_small"
                 android:fontFamily="@font/roboto_regular"
@@ -266,21 +234,21 @@
                 android:layout_below="@+id/text_edit_5"
                 android:layout_above="@+id/img_margin_5"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_format_tanggal"
+                android:hint="@string/et_desc"
                 android:textColorHint="@color/putihGelap5"
                 android:textColor="@color/hitamAsli"
                 android:textSize="@dimen/text_standard_big"
                 android:paddingLeft="@dimen/margin_standard"
-                android:id="@+id/et_tanggal_lahir"
-                android:editable="false"
+                android:id="@+id/et_desc"
+                android:digits="@string/digit_nama"
                 />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/mb_header_small"
-            android:layout_below="@+id/rl_et_tanggal_lahir"
+            android:background="@drawable/ld_header_small"
+            android:layout_below="@+id/rl_et_desc"
             android:elevation="@dimen/margin_small"
             android:id="@+id/rl_header_alamat"
             android:layout_marginTop="@dimen/margin_standard"
@@ -288,7 +256,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/et_alamat_muballigh"
+                android:text="@string/et_alamat_lembaga"
                 android:textColor="@color/putihAsli"
                 android:textSize="@dimen/text_standard_et"
                 android:textStyle="bold"

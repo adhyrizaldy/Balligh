@@ -35,6 +35,8 @@ public class ContentMainLembaga extends Fragment{
         textTarwih.setText(getResources().getString(R.string.text_ceramah_tarwih) + " : " + Integer.toString(jumlahTarwih));
         userPreference = new UserPreference(getActivity());
         configSeekBar();
+        seekBar1.setEnabled(false);
+        seekBar2.setEnabled(false);
 
         return view;
     }

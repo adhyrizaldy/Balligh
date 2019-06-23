@@ -67,7 +67,7 @@
     <RelativeLayout
         android:id="@+id/rl_center"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/width240"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/customToolbar"
         android:layout_marginTop="@dimen/margin_small">
 
@@ -147,25 +147,25 @@
     <RelativeLayout
         android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/width220"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
         android:layout_below="@+id/rl_center"
         android:background="@drawable/ld_footer_big"
         android:elevation="@dimen/margin_small"
-        android:paddingTop="@dimen/width30"
         android:paddingBottom="@dimen/margin_standard"
         android:paddingLeft="@dimen/width30"
-        android:paddingRight="@dimen/width30">
+        android:paddingRight="@dimen/width30"
+        android:paddingTop="@dimen/width30">
 
         <TextView
             android:id="@+id/text_jadwal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/img_garis"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/width80"
+            android:layout_marginBottom="@dimen/margin_small"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/text_jadwal1"
-            android:textColor="@color/putihGelap3"
+            android:textColor="@color/putihGelap1"
             android:textSize="@dimen/text_standard_et"
             android:textStyle="bold" />
 
@@ -173,8 +173,7 @@
             android:id="@+id/img_garis"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_very_small"
-            android:layout_below="@+id/text_jadwal"
-            android:layout_marginTop="@dimen/margin_small"
+            android:layout_above="@+id/text_khutbah"
             android:background="@color/hitamAsli"
             android:src="@color/putihAsli" />
 
@@ -182,10 +181,11 @@
             android:id="@+id/text_khutbah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_garis"
+            android:layout_above="@+id/seek_bar1"
             android:layout_marginTop="@dimen/margin_small"
             android:fontFamily="@font/roboto_regular"
             android:text="Kutbah Jumat : "
+            android:layout_marginLeft="@dimen/margin_standard"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_standard_et" />
 
@@ -193,8 +193,8 @@
             android:id="@+id/seek_bar1"
             android:layout_width="match_parent"
             android:layout_height="16dp"
-            android:layout_below="@+id/text_khutbah"
-            android:layout_marginTop="8dp"
+            android:layout_above="@+id/text_ceramah"
+            android:layout_marginBottom="@dimen/margin_small"
             android:layout_toLeftOf="@+id/text_jumlah_khutbah"
             app:bsb_hide_bubble="true"
             app:bsb_second_track_color="@color/putihHijau"
@@ -205,8 +205,9 @@
             android:id="@+id/text_jumlah_khutbah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/text_ceramah"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/text_khutbah"
+            android:layout_marginBottom="@dimen/margin_standard"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/text_jumlah_khutbah"
             android:textColor="@color/putihAsli"
@@ -216,10 +217,10 @@
             android:id="@+id/text_ceramah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/seek_bar1"
-            android:layout_marginTop="@dimen/margin_small"
+            android:layout_above="@+id/seek_bar2"
             android:fontFamily="@font/roboto_regular"
             android:text="Ceramah Tarwih : "
+            android:layout_marginLeft="@dimen/margin_standard"
             android:textColor="@color/putihAsli"
             android:textSize="@dimen/text_standard_et" />
 
@@ -227,8 +228,8 @@
             android:id="@+id/seek_bar2"
             android:layout_width="match_parent"
             android:layout_height="16dp"
-            android:layout_below="@+id/text_ceramah"
-            android:layout_marginTop="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_small"
             android:layout_toLeftOf="@+id/text_jumlah_ceramah"
             app:bsb_hide_bubble="true"
             app:bsb_second_track_color="@color/putihHijau"
@@ -239,8 +240,9 @@
             android:id="@+id/text_jumlah_ceramah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/text_ceramah"
+            android:layout_marginBottom="@dimen/margin_standard"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/text_jumlah_tarwih"
             android:textColor="@color/putihAsli"

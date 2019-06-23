@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.xw.repo.BubbleSeekBar;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,7 @@ public class ActProfilLembaga extends AppCompatActivity {
     private CircleImageView imgUser, imgPengurus;
     private UserPreference userPreference;
     private View view;
+    private BubbleSeekBar seekBar1, seekBar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +54,18 @@ public class ActProfilLembaga extends AppCompatActivity {
         imgUser = (CircleImageView) findViewById(R.id.img_user);
         imgPengurus = (CircleImageView) findViewById(R.id.img_pengurus);
         view = (View) findViewById(android.R.id.content);
+        seekBar1 = (BubbleSeekBar) findViewById(R.id.seek_bar1);
+        seekBar2 = (BubbleSeekBar) findViewById(R.id.seek_bar2);
 
         userPreference = new UserPreference(this);
         setData();
+        seekBar1.setEnabled(false);
+        seekBar2.setEnabled(false);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActProfilLembaga.this, ActMainMuballigh.class));
+                startActivity(new Intent(ActProfilLembaga.this, ActMainLembaga.class));
                 finish();
             }
         });
@@ -67,7 +73,7 @@ public class ActProfilLembaga extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActProfilLembaga.this, ActEditProfilMuballigh.class));
+                startActivity(new Intent(ActProfilLembaga.this, ActEditProfilLembaga.class));
                 finish();
             }
         });
@@ -85,7 +91,7 @@ public class ActProfilLembaga extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ActProfilLembaga.this, ActMainMuballigh.class));
+        startActivity(new Intent(ActProfilLembaga.this, ActMainLembaga.class));
         finish();
     }
 }

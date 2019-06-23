@@ -28,6 +28,13 @@
     <string name="et_jk_perempuan">Perempuan</string>
     <string name="et_jk">Jenis Kelamin</string>
 
+    <string name="et_nama_lembaga">Nama Lembaga Dakwah</string>
+    <string name="et_nama_pengurus">Nama Pengurus</string>
+    <string name="et_pengurus">Pengurus</string>
+    <string name="et_desc">Deskripsi</string>
+    <string name="et_desc_lembaga">Deskripsi Lembaga Dakwah</string>
+    <string name="et_foto_pengurus">Photo Pengurus</string>
+
     <string name="et_nama_perguruan">Nama Perguruan Tinggi</string>
     <string name="et_nama_pt">Nama PT</string>
     <string name="et_kota_perguruan">Kota PT</string>
@@ -40,6 +47,7 @@
     <string name="et_gelar_s3">Dr.</string>
 
     <string name="et_alamat_muballigh">Alamat Muballigh</string>
+    <string name="et_alamat_lembaga">Alamat Lembaga Dakwah</string>
 
     <string name="text_pendidikan1">Pendidikan  S1</string>
     <string name="text_pendidikan2">Pendidikan  S2</string>
@@ -73,6 +81,10 @@
     <string name="text_profil_muballigh">Profil Muballigh</string>
     <string name="text_profil_lembaga">Profil Lembaga Dakwah</string>
     <string name="text_profil_pengurus">Profil Masjid</string>
+
+    <string name="text_frag_lembaga">Profil Lembaga</string>
+    <string name="text_frag_masjid">Afiliasi Masjid</string>
+    <string name="text_frag_muballigh">Afiliasi Muballigh</string>
 
     <string name="text_frag_biodata">Biodata</string>
     <string name="text_frag_pendidikan">Pendidikan</string>

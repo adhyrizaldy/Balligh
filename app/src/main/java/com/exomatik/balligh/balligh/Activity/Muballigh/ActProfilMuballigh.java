@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.xw.repo.BubbleSeekBar;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class ActProfilMuballigh extends AppCompatActivity {
     private CircleImageView imgUser;
     private UserPreference userPreference;
     private View view;
+    private BubbleSeekBar seekBar1, seekBar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +51,14 @@ public class ActProfilMuballigh extends AppCompatActivity {
         textJumlahKutbah = (TextView) findViewById(R.id.text_jumlah_khutbah);
         textJumlahCeramah = (TextView) findViewById(R.id.text_jumlah_ceramah);
         view = (View) findViewById(android.R.id.content);
+        seekBar1 = (BubbleSeekBar) view.findViewById(R.id.seek_bar1);
+        seekBar2 = (BubbleSeekBar) view.findViewById(R.id.seek_bar2);
 
         userPreference = new UserPreference(this);
 
         setData();
+        seekBar1.setEnabled(false);
+        seekBar2.setEnabled(false);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

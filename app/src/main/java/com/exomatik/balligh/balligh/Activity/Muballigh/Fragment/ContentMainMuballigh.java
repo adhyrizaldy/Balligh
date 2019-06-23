@@ -36,6 +36,9 @@ public class ContentMainMuballigh extends Fragment{
         userPreference = new UserPreference(getActivity());
         configSeekBar();
 
+        seekBar1.setEnabled(false);
+        seekBar2.setEnabled(false);
+
         return view;
     }
 

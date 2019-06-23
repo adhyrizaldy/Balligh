@@ -50,6 +50,9 @@
         <activity android:name=".Activity.Muballigh.ActEditProfilMuballigh"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".Activity.LembagaDakwah.ActEditProfilLembaga"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".Activity.Muballigh.ActProfilMuballigh"
             android:screenOrientation="portrait"
             />
