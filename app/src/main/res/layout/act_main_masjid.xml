@@ -80,56 +80,138 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/width120"
+            android:layout_height="@dimen/width150"
             android:layout_gravity="bottom"
             android:gravity="center_horizontal"
-            android:background="@color/gray1"
-            android:padding="@dimen/width30"
-            >
+            android:padding="@dimen/width30">
+
+            <TextView
+                android:id="@+id/text_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/text_switch_akun"
+                android:textAlignment="center"
+                android:textColor="@color/putihAsli"
+                android:textSize="@dimen/text_standard_et" />
+
             <ImageView
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/width30"
-                android:src="@drawable/icon_facebook"
-                android:id="@+id/img_facebook"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_standard"
-                />
-            <ImageView
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/width30"
-                android:src="@drawable/icon_twiter"
-                android:id="@+id/img_twitter"
-                android:layout_toRightOf="@id/img_facebook"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_standard"
-                />
-            <ImageView
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/width30"
-                android:src="@drawable/icon_linkedin"
-                android:id="@+id/img_link"
-                android:layout_toRightOf="@id/img_twitter"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_standard"
-                />
-            <ImageView
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/width30"
-                android:src="@drawable/icon_google"
-                android:id="@+id/img_google"
-                android:layout_toRightOf="@+id/img_link"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_standard"
-                />
-            <ImageView
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/width30"
-                android:src="@drawable/icon_pinterest"
-                android:id="@+id/img_pinterest"
-                android:layout_toRightOf="@id/img_google"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_standard"
-                />
+                android:id="@+id/img_garis"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_very_small"
+                android:layout_below="@+id/text_switch"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:src="@color/putihAsli" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_garis"
+                android:layout_centerHorizontal="true"
+                >
+                <RelativeLayout
+                    android:id="@+id/jenis1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="@dimen/margin_standard">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/gray2"
+                        android:id="@+id/img_icon_1"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_switch_1"
+                        android:layout_width="@dimen/margin_big_standard"
+                        android:layout_height="@dimen/margin_big_standard"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
+                        android:src="@drawable/lembaga_dakwah" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/jenis2"
+                    android:layout_width="@dimen/width40"
+                    android:layout_height="@dimen/width40"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_toRightOf="@+id/jenis1"
+                    android:elevation="@dimen/margin_standard">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/gray2"
+                        android:id="@+id/img_icon_2"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_switch_2"
+                        android:layout_width="@dimen/margin_big_standard"
+                        android:layout_height="@dimen/margin_big_standard"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
+                        android:src="@drawable/pengurus_masjid" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/jenis3"
+                    android:layout_width="@dimen/width40"
+                    android:layout_height="@dimen/width40"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_toRightOf="@+id/jenis2"
+                    android:elevation="@dimen/margin_standard">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/gray2"
+                        android:id="@+id/img_icon_3"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_switch_3"
+                        android:layout_width="@dimen/margin_big_standard"
+                        android:layout_height="@dimen/margin_big_standard"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
+                        android:src="@drawable/muballigh" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/jenis4"
+                    android:layout_width="@dimen/width40"
+                    android:layout_height="@dimen/width40"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_toRightOf="@+id/jenis3"
+                    android:elevation="@dimen/margin_standard">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/gray2"
+                        android:id="@+id/img_icon_4"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_switch_4"
+                        android:layout_width="@dimen/margin_big_standard"
+                        android:layout_height="@dimen/margin_big_standard"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
+                        android:src="@drawable/masyarakat" />
+                </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
     </android.support.design.widget.NavigationView>
 
