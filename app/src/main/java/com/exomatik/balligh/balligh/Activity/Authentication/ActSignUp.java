@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ActSignUp extends AppCompatActivity {
     private String jenisAkun = "Muballigh";
-    private RelativeLayout bgJenis1, bgJenis2, bgJenis3;
+    private ImageView bgJenis1, bgJenis2, bgJenis3;
     private RelativeLayout btnJenis1, btnJenis2, btnJenis3, btnJenis4;
     private TextView btnSignIn;
     private Button btnSignUp;
@@ -51,9 +52,9 @@ public class ActSignUp extends AppCompatActivity {
         btnJenis2 = (RelativeLayout) findViewById(R.id.rl_pm);
         btnJenis3 = (RelativeLayout) findViewById(R.id.rl_mb);
         btnJenis4 = (RelativeLayout) findViewById(R.id.rl_ms);
-        bgJenis1 = (RelativeLayout) findViewById(R.id.rl_ld);
-        bgJenis2 = (RelativeLayout) findViewById(R.id.rl_pm);
-        bgJenis3 = (RelativeLayout) findViewById(R.id.rl_mb);
+        bgJenis1 = (ImageView) findViewById(R.id.bg_1);
+        bgJenis2 = (ImageView) findViewById(R.id.bg_2);
+        bgJenis3 = (ImageView) findViewById(R.id.bg_3);
         btnSignIn = (TextView) findViewById(R.id.text_sign_in);
         btnSignUp = (Button) findViewById(R.id.btn_sign_up);
         etNama = (EditText) findViewById(R.id.et_nama);
@@ -117,19 +118,19 @@ public class ActSignUp extends AppCompatActivity {
     private String gantiBg(String jenis) {
         switch (jenis) {
             case "Lembaga Dakwah":
-                bgJenis1.setBackgroundResource(R.drawable.background_blue_rounded);
-                bgJenis2.setBackgroundResource(R.drawable.background_white_rounded);
-                bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis1.setImageResource(R.drawable.background_blue_rounded);
+                bgJenis2.setImageResource(R.drawable.background_white_rounded);
+                bgJenis3.setImageResource(R.drawable.background_white_rounded);
                 break;
             case "Pengurus Masjid":
-                bgJenis1.setBackgroundResource(R.drawable.background_white_rounded);
-                bgJenis2.setBackgroundResource(R.drawable.background_blue_rounded);
-                bgJenis3.setBackgroundResource(R.drawable.background_white_rounded);
+                bgJenis1.setImageResource(R.drawable.background_white_rounded);
+                bgJenis2.setImageResource(R.drawable.background_blue_rounded);
+                bgJenis3.setImageResource(R.drawable.background_white_rounded);
                 break;
             case "Muballigh":
-                bgJenis1.setBackgroundResource(R.drawable.background_white_rounded);
-                bgJenis2.setBackgroundResource(R.drawable.background_white_rounded);
-                bgJenis3.setBackgroundResource(R.drawable.background_blue_rounded);
+                bgJenis1.setImageResource(R.drawable.background_white_rounded);
+                bgJenis2.setImageResource(R.drawable.background_white_rounded);
+                bgJenis3.setImageResource(R.drawable.background_blue_rounded);
                 break;
         }
         return jenis;

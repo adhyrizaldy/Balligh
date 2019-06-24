@@ -135,7 +135,6 @@ public class fragBioMuballigh extends Fragment {
             @Override
             public void onClick(View v) {
                 etTanggalLahir.setError(null);
-                Toast.makeText(getActivity(), "Klik 2 kali", Toast.LENGTH_SHORT).show();
                 getDate();
             }
         });
@@ -215,7 +214,6 @@ public class fragBioMuballigh extends Fragment {
                         ArrayList<String> Kota = data.namaKota(dataKelas.getProvinsi());
 
                         listKota.add(dataKelas.getKota());
-                        Toast.makeText(getActivity(), "Kota" + dataKelas.getKota(), Toast.LENGTH_SHORT).show();
 
                         for (int a = 0; a < Kota.size(); a++){
                             if (!Kota.get(a).equals(dataKelas.getKota())){
@@ -322,7 +320,7 @@ public class fragBioMuballigh extends Fragment {
 
         if (nama.isEmpty() || phone.isEmpty() || tempatLahir.isEmpty() || tanggalLahir.isEmpty() || alamat.isEmpty()
                 || jk == -1 || prov.length() == 1 || kota.length() == 1|| (imageUri == null && userPreference.getKEY_FOTO() == null)
-                || phone.length() < 9
+                || phone.length() < 9 || locationPoint == null
                 ) {
             if (nama.isEmpty()) {
                 etNama.setError(getResources().getString(R.string.error_data_kosong));
@@ -359,7 +357,13 @@ public class fragBioMuballigh extends Fragment {
             }
             if (imageUri == null && userPreference.getKEY_FOTO() == null) {
                 Snackbar snackbar = Snackbar
-                        .make(view, "Anda belum mengupload Foto", Snackbar.LENGTH_LONG);
+                        .make(view, getResources().getString(R.string.error_foto_kosong), Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+
+            if (locationPoint == null){
+                Snackbar snackbar = Snackbar
+                        .make(view, getResources().getString(R.string.error_latitude_kosong), Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
         } else {
@@ -510,7 +514,7 @@ public class fragBioMuballigh extends Fragment {
     }
 
     private void setDataUser(final String phone, final ModelBiodataMuballigh data) {
-        ModelUser dataUser = new ModelUser(userPreference.getKEY_NAME(), userPreference.getKEY_EMAIL(), data.getNomorHP(),
+        ModelUser dataUser = new ModelUser(data.getNama(), userPreference.getKEY_EMAIL(), data.getNomorHP(),
                 userPreference.getKEY_UID(), userPreference.getKEY_JENIS());
 
         DatabaseReference localDatabaseReference = FirebaseDatabase.getInstance().getReference();
@@ -570,6 +574,7 @@ public class fragBioMuballigh extends Fragment {
                         if (paramAnonymous2Task.isSuccessful()) {
                             progressDialog.dismiss();
                             Toast.makeText(getActivity(), "Berhasil Upload Data", Toast.LENGTH_LONG).show();
+                            userPreference.setKEY_NAME(data.getNama());
                             userPreference.setKEY_PHONE(data.getNomorHP());
                             userPreference.setKEY_FOTO(data.getFoto());
                             startActivity(new Intent(getActivity(), ActProfilMuballigh.class));

@@ -12,23 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/img_logo"
-            android:layout_width="@dimen/width100"
-            android:layout_height="@dimen/width100"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/logo_balligh"
-            />
-
+        <!--<ImageView-->
+        <!--android:id="@+id/img_logo"-->
+        <!--android:layout_width="@dimen/width100"-->
+        <!--android:layout_height="@dimen/width100"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:src="@drawable/logo_balligh"-->
+        <!--/>-->
         <TextView
             android:id="@+id/text_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_logo"
             android:layout_marginTop="@dimen/margin_small"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/btn_sign_up"
-            android:textColor="@color/putihBiru"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_standard_big" />
 
         <EditText
@@ -124,31 +122,39 @@
             android:layout_below="@+id/text_jenis_akun">
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:id="@+id/rl_ld"
                 android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/background_white_rounded"
+                android:layout_toLeftOf="@+id/rl_center"
                 >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/background_white_rounded"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="@dimen/margin_standard"
+                    android:id="@+id/bg_1"
+                    />
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/margin_large"
+                    android:layout_height="@dimen/margin_large"
                     android:id="@+id/jenis1"
-                    android:layout_marginLeft="@dimen/margin_mines_very_small"
                     >
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/margin_large"
+                        android:layout_height="@dimen/margin_large"
                         android:src="@drawable/icon_blue"
                         android:id="@+id/img_icon_ld"
                         />
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/width40"
+                        android:layout_height="@dimen/width40"
                         android:src="@drawable/lembaga_dakwah"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/img_logo_ld"
-                        android:layout_marginLeft="@dimen/margin_standard"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
                         />
                 </RelativeLayout>
                 <TextView
@@ -161,38 +167,45 @@
                     android:textSize="@dimen/text_standard_et"
                     android:textColor="@color/putihAsli"
                     android:layout_marginLeft="@dimen/margin_small"
-                    android:layout_marginRight="@dimen/margin_standard"
                     />
             </RelativeLayout>
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/rl_pm"
                 android:layout_below="@+id/rl_ld"
                 android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/background_white_rounded"
+                android:layout_toLeftOf="@+id/rl_center"
                 >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/background_white_rounded"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="@dimen/margin_standard"
+                    android:id="@+id/bg_2"
+                    />
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/margin_large"
+                    android:layout_height="@dimen/margin_large"
                     android:id="@+id/jenis2"
-                    android:layout_marginLeft="@dimen/margin_mines_very_small"
                     >
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/margin_large"
+                        android:layout_height="@dimen/margin_large"
                         android:src="@drawable/icon_blue"
                         android:id="@+id/img_icon_pm"
                         />
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/width40"
+                        android:layout_height="@dimen/width40"
                         android:src="@drawable/pengurus_masjid"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/img_logo_pm"
-                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
                         android:layout_marginRight="@dimen/margin_standard"
+                        android:layout_marginLeft="@dimen/margin_small"
                         />
                 </RelativeLayout>
                 <TextView
@@ -205,37 +218,51 @@
                     android:textSize="@dimen/text_standard_et"
                     android:textColor="@color/putihAsli"
                     android:layout_marginLeft="@dimen/margin_small"
-                    android:layout_marginRight="@dimen/margin_standard"
                     />
             </RelativeLayout>
             <RelativeLayout
+                android:layout_width="1dp"
+                android:layout_height="@dimen/width100"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/rl_center"
+                >
+
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:id="@+id/rl_mb"
                 android:layout_toRightOf="@+id/rl_ld"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_standard"
-                android:background="@drawable/background_blue_rounded"
                 >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/background_blue_rounded"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="@dimen/margin_standard"
+                    android:id="@+id/bg_3"
+                    />
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/margin_large"
+                    android:layout_height="@dimen/margin_large"
                     android:id="@+id/jenis3"
-                    android:layout_marginLeft="@dimen/margin_mines_very_small"
                     >
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:src="@drawable/icon_blue"
                         android:id="@+id/img_icon_mb"
                         />
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/width40"
+                        android:layout_height="@dimen/width40"
                         android:src="@drawable/muballigh"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/img_logo_mb"
+                        android:padding="@dimen/margin_small"
                         />
                 </RelativeLayout>
                 <TextView
@@ -253,33 +280,42 @@
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:id="@+id/rl_ms"
                 android:layout_toRightOf="@+id/rl_pm"
                 android:layout_below="@+id/rl_mb"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_standard"
-                android:background="@drawable/background_white_rounded"
                 >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/background_white_rounded"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="@dimen/margin_standard"
+                    android:id="@+id/bg_4"
+                    />
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:id="@+id/jenis4"
-                    android:layout_marginLeft="@dimen/margin_mines_very_small"
                     >
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:src="@drawable/icon_blue"
                         android:id="@+id/img_icon_ms"
+                        android:scaleType="fitXY"
                         />
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/masyarakat"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/img_logo_ms"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:padding="@dimen/margin_small"
                         />
                 </RelativeLayout>
                 <TextView

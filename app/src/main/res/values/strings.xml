@@ -98,6 +98,8 @@
     <string name="text_kualifikasi_ilmu">Kualifikasi Keilmuan</string>
     <string name="text_kualifikasi_tabligh">Kesediaan Tabligh</string>
 
+    <string name="error_foto_kosong">Anda belum mengupload Foto</string>
+    <string name="error_latitude_kosong">Anda belum memilih lokasi di map!</string>
     <string name="error_data_kosong">Data tidak boleh kosong!</string>
     <string name="error_pass_not_same">Password tidak sesuai!</string>
     <string name="error_nomor_tidak_cukup">Jumlah Nomor tidak Valid!</string>
@@ -128,5 +130,5 @@
     <string name="btn_update">Update</string>
 
     <string name="digit_nama">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_ .,</string>
-    <string name="digit_email">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_@.</string>
+    <string name="digit_email">asdfghjklqwertyuiopzxcvbnmZXCVBNMASDFGHJKLQWERTYUIOP1234567890_@.-</string>
 </resources>

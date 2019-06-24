@@ -44,6 +44,7 @@
     <dimen name="margin_mines_30">-30dp</dimen>
     <dimen name="margin_mines_standard_big">-15dp</dimen>
     <dimen name="margin_mines_standard">-10dp</dimen>
+    <dimen name="margin_mines_small">-5dp</dimen>
     <dimen name="margin_mines_very_small">-2dp</dimen>
 
     <dimen name="width_max">320dp</dimen>

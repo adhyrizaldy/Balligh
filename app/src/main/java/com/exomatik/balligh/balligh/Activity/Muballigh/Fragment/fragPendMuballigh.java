@@ -20,8 +20,11 @@ import com.exomatik.balligh.balligh.Model.ModelPendidikan;
 import com.exomatik.balligh.balligh.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -65,6 +68,7 @@ public class fragPendMuballigh extends Fragment{
         etGelarS3 = (EditText) view.findViewById(R.id.et_gelar_pt_s3);
 
         userPreference = new UserPreference(getActivity());
+        setEditText();
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,51 @@ public class fragPendMuballigh extends Fragment{
 
 
         return view;
+    }
+
+    private void setEditText() {
+        FirebaseDatabase.getInstance()
+                .getReference(userPreference.getKEY_JENIS())
+                .child(getResources().getString(R.string.text_frag_pendidikan))
+                .child(userPreference.getKEY_PHONE())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            ArrayList<ModelPendidikan> dataPT = new ArrayList<ModelPendidikan>();
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                ModelPendidikan data = snapshot.getValue(ModelPendidikan.class);
+                                dataPT.add(data);
+                            }
+                            etGelarS1.setText(dataPT.get(0).getGelar());
+                            etGelarS2.setText(dataPT.get(1).getGelar());
+                            etGelarS3.setText(dataPT.get(2).getGelar());
+
+                            etJurusanS1.setText(dataPT.get(0).getJurusan());
+                            etJurusanS2.setText(dataPT.get(1).getJurusan());
+                            etJurusanS3.setText(dataPT.get(2).getJurusan());
+
+                            etKotaS1.setText(dataPT.get(0).getKota());
+                            etKotaS2.setText(dataPT.get(1).getKota());
+                            etKotaS3.setText(dataPT.get(2).getKota());
+
+                            etNamaS1.setText(dataPT.get(0).getNama());
+                            etNamaS2.setText(dataPT.get(1).getNama());
+                            etNamaS3.setText(dataPT.get(2).getNama());
+
+                            etTahunS1.setText(dataPT.get(0).getTahun());
+                            etTahunS2.setText(dataPT.get(1).getTahun());
+                            etTahunS3.setText(dataPT.get(2).getTahun());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Snackbar snackbar = Snackbar
+                                .make(view, getResources().getString(R.string.error) + databaseError.getMessage().toString(), Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                });
     }
 
     private void cekEditText() {

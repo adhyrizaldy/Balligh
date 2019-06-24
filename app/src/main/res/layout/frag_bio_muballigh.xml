@@ -433,7 +433,6 @@
                 android:paddingLeft="@dimen/margin_standard"
                 android:lines="3"
                 android:id="@+id/et_alamat"
-                android:editable="false"
                 />
         </RelativeLayout>
 
